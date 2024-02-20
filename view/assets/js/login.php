@@ -18,6 +18,8 @@
                 <li><a href="..\js\productos.php">Productos</a></li>
                 <li><a href="..\js\contacto.php">Contacto</a></li>
                 <li><a href="..\js\login.php">Cuenta</a></li>
+                <li><a href="..\js\pacientes.php">Pacientes</a></li>
+                <li><a href="..\js\proveedor.php">Proveedor</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +31,7 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Inicio de Sesión</p>
-                    <form action="..\loginController.php"" method="post">
+                    <form action="..\loginController.php" method="post">
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Usuario" name="usuario">
         <div class="input-group-append">
