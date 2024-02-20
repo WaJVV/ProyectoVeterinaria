@@ -19,12 +19,10 @@
         </ul>
     </nav>
     </header>
-    <carrusel>
-        <img src="../assets/img/perrosAdultos.jpg"  alt="Imagen de perros adultos">
-        <img src="../assets/img/perrosCachorros.jpg"   alt="Imagen de perros cachorros">
-        <img src="../assets/img/gatosCachorros.jpg"   alt="Imagen de gatos cachorros">
-        <!--<img src="../assets/img/mascotas.jpg"   alt="Imagen de mascotas">-->
-    </carrusel>
+    <div>
+    <img src="https://cdn.shopify.com/s/files/1/0495/2103/3365/collections/banner_for_website.jpg?v=1681075523"  alt="Imagen de perros adultos" width="1500px" height="250px" class="img">
+
+    </div>
     <section>
         <h1>¡Bienvenido a DrPets!</h1>
         <h2>Busca tu servicio:</h2>
