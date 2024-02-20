@@ -23,6 +23,8 @@
     <img src="https://cdn.shopify.com/s/files/1/0495/2103/3365/collections/banner_for_website.jpg?v=1681075523"  alt="Imagen de perros adultos" width="1500px" height="250px" class="img">
 
     </div>
+    
+    <div class="contacto-info">
     <section>
         <h1>¡Bienvenido a DrPets!</h1>
         <h2>Busca tu servicio:</h2>
@@ -49,10 +51,7 @@
         <p>Servir a todos los seres queridos como si fueran parte de nuestra familia.</p>
     </main>
     </section>
-    <aside>
-            <h3>Horarios de atención</h3>
-            Lunes a Viernes: 8am - 6pm <br> Sábado: 9am - 4pm <br> Domingo: Cerrado <br> <br>
-    </aside>
+</div>
     <footer>
         Derechos Reservados &copy; 2024 
     </footer>
