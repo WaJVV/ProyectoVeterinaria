@@ -9,7 +9,7 @@ body {
 .content {
     margin: 20px; /* Margen exterior */
     padding: 20px; /* Relleno interior */
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: skyblue; /* Fondo blanco */
 }
 
 /* Sección de inicio de sesión */
@@ -23,7 +23,7 @@ body {
 /* Cuadro de inicio de sesión */
 .login-box {
     width: 400px; /* Ancho fijo */
-    background-color: #539B3E; /* Color de fondo verde */
+    background-color: lightslategray; /* Color de fondo verde */
     padding: 20px; /* Relleno interior */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
@@ -41,20 +41,20 @@ body {
 
 /* Texto del grupo de entrada del cuadro de inicio de sesión */
 .login-box .input-group-text {
-    background-color: #ffffff; /* Color de fondo blanco */
+    background-color: lightslategray; /* Color de fondo blanco */
     border: none; /* Sin borde */
 }
 
 /* Botón de inicio de sesión */
 .login-box .btn-primary {
-    background-color: #539B3E; /* Color de fondo verde */
-    border-color: #407A29; /* Color del borde */
+    background-color: skyblue; /* Color de fondo verde */
+    border-color: skyblue; /* Color del borde */
     width: 100%; /* Ancho del 100% */
     color: white; /* Color de texto blanco */
 }
 
 /* Estilo de desplazamiento del botón de inicio de sesión */
 .login-box .btn-primary:hover {
-    background-color: #407A29; /* Color de fondo verde oscuro */
-    border-color: #407A29; /* Color del borde */
+    background-color: skyblue; /* Color de fondo verde oscuro */
+    border-color: skyblue; /* Color del borde */
 }

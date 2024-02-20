@@ -288,18 +288,35 @@ footer {
   .img{
     border-radius: 25px;
   }
+ 
+ .login-section{
+    background-color: white;
+   }
+   .login-box.msg{
+    background-color: lightslategray;
+   }
   .login-box{
     background-color: lightslategray;
 
   }
- .card-body {
+ .card-body login-card-body {
     background-color: lightslategray;
 
  }
- .card{
-    background-color: lightslategray;
-    text-align: center;
+ 
+ .login-logo{
+  background-color: lightslategray;
+
  }
+ .card{
+  background-color: lightslategray;
+  text-align: center;
+}
+.input-group{
+  background-color: lightslategray;
+  text-align: center;
+}
+ 
  .btn{
     background-color: lightskyblue;
 
@@ -330,7 +347,8 @@ th, td {
     justify-content: center;
 }
 th {
-    background-color: green;
+    background-color: lightblue;
+    color: black;
 }
 .modal {
     display: none;

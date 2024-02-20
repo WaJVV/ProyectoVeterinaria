@@ -16,16 +16,13 @@
                 <li><a href="#">Productos</a></li>
                 <li><a href="..\js\contacto.php">Contacto</a></li>
                 <li><a href="..\js\login.php">Cuenta</a></li>
+                <li><a href="..\js\pacientes.php">Pacientes</a></li>
+                <li><a href="..\js\proveedor.php">Proveedor</a></li>
             </ul>
         </nav>
     </header>
-    <div class="main-content">
-        <h2>Contacto</h2>
-        <div class="contact-info">
-            <p><strong>Dirección:</strong> Alajuela, Naranjo Ruta Nacional Secundaria 141</p>
-            <p><strong>Teléfono:</strong> +506 8466 7897</p>
-            <p><strong>Correo electrónico:</strong> DrPets@gmail.com</p>
-        </div>
+       
+<div class="contacto">
         <section>
             <div class="contact-form">
                 <h3>Envíanos un mensaje</h3>
@@ -53,12 +50,20 @@
         </section>
     </div>
 </div>
-    <!-- Mapa -->
-    <aside>
-    <div class="map-container">
-        <iframe width="700" height=300" src="https://maps.google.com/maps?q=VETERINARIA+DR.+PET%2C+4J28%2BWJQ%2C+Ruta+Nacional+Secundaria+141%2C+Provincia+de+Alajuela%2C+Naranjo%2C+Mar%C3%ADa+Auxiliadora&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-    </div>
-    </aside>
+</div>
+<div class="contenedor">
+    
+    <div class="contacto-info">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <p><strong>Dirección:</strong> Alajuela, Naranjo Ruta Nacional Secundaria 141</p>
+            <p><strong>Teléfono:</strong> +506 8466 7897</p>
+            <p><strong>Correo electrónico:</strong> DrPets@gmail.com</p>
+        </div>
+        </div>
+
+</div>
+   
     <footer>
         Derechos Reservados &copy; 2024 
     </footer>

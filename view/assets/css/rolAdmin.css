@@ -11,8 +11,8 @@ main button {
 .botones {
     border-radius: 10px;
     padding: 5px 10px;
-    background-color: #539B3E;
-    border: 1px solid #407A29;
+    background-color: skyblue;
+    border: 1px solid skyblue;
     cursor: pointer;
     color: white; /* Color del texto */
     text-decoration: none; /* Quitar subrayado del texto */
@@ -23,7 +23,7 @@ main button {
 }
 
 .botones:hover {
-    background-color: #407A29; /* Cambiar color de fondo al pasar el ratón */
+    background-color: skyblue; /* Cambiar color de fondo al pasar el ratón */
 }
 
 .opciones-administrador {
@@ -31,7 +31,7 @@ main button {
     padding: 20px; /* Espaciado interno */
     margin-bottom: 20px; /* Espaciado inferior */
     border-radius: 5px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo */
+    background-color: lightslategray; /* Color de fondo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
@@ -93,7 +93,7 @@ main button {
 }
 
 .menu button:hover {
-    background-color: #539B3E;
+    background-color: skyblue;
     ;
     font-style: white;
 }
