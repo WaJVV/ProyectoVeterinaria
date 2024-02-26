@@ -155,3 +155,21 @@ footer {
 .contact-form input[type="submit"]:hover {
     background-color: #407A29;
 }
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporción 16:9 para el contenedor del mapa */
+    margin-bottom: 20px; /* Margen inferior para separar el mapa de otros elementos */
+}
+
+  /* Estilos para el iframe del mapa */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

@@ -11,11 +11,11 @@
     <nav>
         <ul>
             <li><a href="../assets/index.php">DrPets</a></li>
-            <li><a href="../assets/js/nuestraClinica.php">Nuestra Clínica</a></li>
-            <li><a href="../assets/js/servicios.php">Servicios</a></li>
-            <li><a href="../assets/js/productos.php">Productos</a></li>
-            <li><a href="../assets/js/contacto.php">Contacto</a></li>
-            <li><a href="../assets/js/login.php">Cuenta</a></li>
+            <li><a href="../assets/modu/nuestraClinica.php">Nuestra Clínica</a></li>
+            <li><a href="../assets/modu/servicios.php">Servicios</a></li>
+            <li><a href="../assets/modu/productos.php">Productos</a></li>
+            <li><a href="../assets/modu/contacto.php">Contacto</a></li>
+            <li><a href="../assets/modu/login.php">Cuenta</a></li>
         </ul>
     </nav>
     </header>

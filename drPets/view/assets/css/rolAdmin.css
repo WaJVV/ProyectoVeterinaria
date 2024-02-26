@@ -18,7 +18,7 @@ main button {
     text-decoration: none; /* Quitar subrayado del texto */
     display: block; /* Mostrar como bloque para ocupar toda la anchura */
     margin-bottom: 10px; /* Espacio entre botones */
-    width: 200px; /* Ancho de los botones */
+    width: 100px; /* Ancho de los botones */
     text-align: center; /* Centrar texto */
 }
 
@@ -28,7 +28,7 @@ main button {
 
 .opciones-administrador {
     border: 1px solid #ccc; /* Borde de la caja */
-    padding: 20px; /* Espaciado interno */
+    padding: 10px; /* Espaciado interno */
     margin-bottom: 20px; /* Espaciado inferior */
     border-radius: 5px; /* Bordes redondeados */
     background-color: #f9f9f9; /* Color de fondo */
@@ -97,6 +97,85 @@ main button {
     ;
     font-style: white;
 }
+
+.back-button {
+    position: fixed;
+    bottom: 70px; /* Altura del footer + 10px de espacio */
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #539B3E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para la tabla */
+.styled-table {
+    width: 50%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para la tabla Modificar */
+main {
+    display: flex;
+}
+
+.Modificar {
+    flex: 1; /* Ocupa todo el espacio restante */
+    margin-left: 20px; /* Ajusta el margen según sea necesario */
+    width: calc(50% - 20px); /* Calcula el ancho para que sea el 50% del contenedor menos el margen */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.Modificar th,
+.Modificar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.Modificar th {
+    background-color: #f2f2f2;
+}
+
+.Modificar tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.Modificar tbody tr:hover {
+    background-color: #ddd;
+}
+.Modificar {
+    margin-top: 10x; /* Ajusta el margen superior según sea necesario */
+}
+aside {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
+}
+
 
 .cerrarSesion {
     float: left;
