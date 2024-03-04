@@ -50,14 +50,54 @@ carrusel img {
 }
 
 /* Encabezado Menu de opciones*/
+<<<<<<<< HEAD:views/assets/css/plantilla.css
 
+========
+header{
+    background-color: lightseagreen;  
+    color: white;
+    padding: 10px;
+    width: 100%
+}
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
 
 aside {/* formato aside*/
     width: 300px; /* Ancho deseado */
     height: 200px; /* Altura deseada */
     
 }
+<<<<<<<< HEAD:views/assets/css/plantilla.css
 
+========
+nav {
+    color: white;
+    padding: 10px;
+    background-color: lightseagreen;
+    }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+/*Color al tocar la opción del menú */
+nav ul li a:hover {
+    background-color: lightgray;
+}
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
 
 
 /*fondo de la pantalla*/
@@ -68,7 +108,11 @@ aside {/* formato aside*/
 }
 
 /*Pie de página*/
+<<<<<<<< HEAD:views/assets/css/plantilla.css
 /*footer {
+========
+footer {
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
     background-color: lightseagreen;
     color: white;
     padding: 10px;
@@ -76,7 +120,11 @@ aside {/* formato aside*/
     bottom: 0;
     width: 100%;
     text-align: center;
+<<<<<<<< HEAD:views/assets/css/plantilla.css
 }*/
+========
+}
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
 
 /*formulario de contacto*/
 .contact-form {
@@ -127,10 +175,17 @@ aside {/* formato aside*/
     background-color: lightseagreen;
 }
 .contenedor {
+<<<<<<<< HEAD:views/assets/css/plantilla.css
   display: flex;
   justify-content: space-between;
   padding: 25px;
   font-size: 15px;
+========
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    font-size: 15px;
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
 }
 .div1{
     background-color: lightslategray;
@@ -360,6 +415,7 @@ button{
     border-radius: 25px;
     padding: 35px;
     margin-block-end: 50px;
+<<<<<<<< HEAD:views/assets/css/plantilla.css
   }
 
   .nav-item.active {
@@ -369,3 +425,6 @@ button{
 .navbar-nav .nav-item.active .nav-link {
   background-color: #ADD8E6; /* Color celeste */
 }
+========
+  }
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
