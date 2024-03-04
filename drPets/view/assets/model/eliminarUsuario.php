@@ -12,17 +12,17 @@
         <nav>
             <ul>
                 <li><a href="..\index.php">DrPets</a></li>
-                <li><a href="..\modu\nuestraClinica.php">Nuestra Clínica</a></li>
-                <li><a href="..\modu\servicios.php">Servicios</a></li>
-                <li><a href="..\modu\productos.php#">Productos</a></li>
-                <li><a href="..\modu\contacto.php">Contacto</a></li>
-                <li><a href="..\modu\login.php">Cuenta</a></li>
+                <li><a href="..\model\nuestraClinica.php">Nuestra Clínica</a></li>
+                <li><a href="..\model\servicios.php">Servicios</a></li>
+                <li><a href="..\model\productos.php#">Productos</a></li>
+                <li><a href="..\model\contacto.php">Contacto</a></li>
+                <li><a href="..\model\login.php">Cuenta</a></li>
             </ul>
         </nav>
     </header>
 
     <h2>Buscar Usuario</h2>
-    <form action="..\modu\eliminarUsuario.php" method="post">
+    <form action="..\model\eliminarUsuario.php" method="post">
         <label for="usuario">Nombre de Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
         <button type="submit">Buscar</button>

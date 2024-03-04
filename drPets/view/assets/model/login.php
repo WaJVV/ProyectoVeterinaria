@@ -13,23 +13,23 @@
         <nav>
             <ul>
                 <li><a href="..\index.php">DrPets</a></li>
-                <li><a href="..\modu\nuestraClinica.php">Nuestra Clínica</a></li>
-                <li><a href="..\modu\Servicios.php">Servicios</a></li>
-                <li><a href="..\modu\productos.php">Productos</a></li>
-                <li><a href="..\modu\contacto.php">Contacto</a></li>
-                <li><a href="..\modu\login.php">Cuenta</a></li>
+                <li><a href="..\model\nuestraClinica.php">Nuestra Clínica</a></li>
+                <li><a href="..\model\Servicios.php">Servicios</a></li>
+                <li><a href="..\model\productos.php">Productos</a></li>
+                <li><a href="..\model\contacto.php">Contacto</a></li>
+                <li><a href="..\model\login.php">Cuenta</a></li>
             </ul>
         </nav>
     </header>
     <section class="login-section">
         <div class="login-box">
             <div class="login-logo">
-                <a href="..\loginController.php"><b></b></a>
+                <a href="..\controller\loginController.php"><b></b></a>
             </div>
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Inicio de Sesión</p>
-                    <form action="..\loginController.php"" method="post">
+                    <form action="..\controller\loginController.php"" method="post">
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Usuario" name="usuario">
         <div class="input-group-append">

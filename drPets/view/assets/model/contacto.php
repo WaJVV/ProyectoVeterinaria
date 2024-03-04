@@ -15,8 +15,8 @@
                 <li><a href="#">Nuestra Clínica</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Productos</a></li>
-                <li><a href="..\modu\contacto.php">Contacto</a></li>
-                <li><a href="..\modu\login.php">Cuenta</a></li>
+                <li><a href="..\model\contacto.php">Contacto</a></li>
+                <li><a href="..\model\login.php">Cuenta</a></li>
             </ul>
         </nav>
     </header>

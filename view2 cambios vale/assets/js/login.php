@@ -26,12 +26,12 @@
     <section class="login-section">
         <div class="login-box">
             <div class="login-logo">
-                <a href="..\loginController.php"><b></b></a>
+                <a href="..\controller\loginController.php"><b></b></a>
             </div>
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Inicio de Sesión</p>
-                    <form action="..\loginController.php" method="post">
+                    <form action="..\controller\loginController.php" method="post">
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Usuario" name="usuario">
         <div class="input-group-append">
