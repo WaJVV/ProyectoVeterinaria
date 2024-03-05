@@ -12,11 +12,11 @@
         <nav>
             <ul>
                 <li><a href="..\index.php">DrPets</a></li>
-                <li><a href="..\modu\nuestraClinica.php">Nuestra Clínica</a></li>
-                <li><a href="..\modu\servicios.php">Servicios</a></li>
-                <li><a href="..\modu\productos.php">Productos</a></li>
-                <li><a href="..\modu\contacto.php">Contacto</a></li>
-                <li><a href="..\modu\login.php">Cuenta</a></li>
+                <li><a href="..\model\nuestraClinica.php">Nuestra Clínica</a></li>
+                <li><a href="..\model\servicios.php">Servicios</a></li>
+                <li><a href="..\model\productos.php">Productos</a></li>
+                <li><a href="..\model\contacto.php">Contacto</a></li>
+                <li><a href="..\model\login.php">Cuenta</a></li>
             </ul>
         </nav>
     </header>

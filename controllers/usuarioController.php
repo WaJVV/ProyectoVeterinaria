@@ -12,7 +12,8 @@ switch ($_GET["op"]) {
                 "1" => $reg->getRaza(),
                 "2" => $reg->getNombre(),
                 "3" => $reg->getPeso(),
-                "4" => $reg->getNacimiento()
+                "4" => $reg->getNacimiento(),
+                "5" => ""
             );
         }
         $resultados = array(

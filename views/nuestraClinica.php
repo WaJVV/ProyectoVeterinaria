@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nuestraClinica</title>
-    <link href="../css/plantilla.css" rel="stylesheet"><!-- Enlaza el archivo CSS externo -->
     <link href="../css/rolAdmin.css" rel="stylesheet"><!-- Enlaza el archivo CSS externo -->
     <link href="assets/css/plantilla.css" rel="stylesheet"> <!-- Enlaza el archivo CSS externo -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,7 +20,7 @@
     <ul class="navbar-nav">
     <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\index.php"> Inicio <span class="sr-only">(current)</span></a>
-      </li>  
+      </li>
       <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\nuestraClinica.php">Nuestra Clínica <span class="sr-only">(current)</span></a>
       </li>
@@ -42,12 +41,6 @@
       </li>
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\proveedor.php">Proveedor</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\cliente.php">Cliente</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
       </li>
     </ul>
   </div>

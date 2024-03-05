@@ -1,5 +1,5 @@
 <?php
-// Ensure to use the correct path to Cliente.php file
+// uso ocrrecto de Cliente.php file
 require_once '../models/Cliente.php';
 
 switch ($_GET["op"]) {
@@ -37,7 +37,6 @@ switch ($_GET["op"]) {
         $direccion = isset($_POST["direccion"]) ? trim($_POST["direccion"]) : "";
         $telefonoCelular = isset($_POST["telefonoCelular"]) ? trim($_POST["telefonoCelular"]) : "";
 
-        // Create an instance of the Cliente class
         $cliente = new Cliente();
         $cliente->setIdentificacion($identificacion);
         $cliente->setNombre($nombre);
@@ -47,16 +46,15 @@ switch ($_GET["op"]) {
         $cliente->setDireccion($direccion);
         $cliente->setTelefonoCelular($telefonoCelular);
 
-        // Call the method to save into the database
         $cliente->guardarEnDb();
         if ($cliente->verificarExistenciaDb()) {
             //if(enviarCorreo($email,$clave,$nombre)){
-            echo 1; // Successful user registration
+            echo 1; 
             //} else {
-            //  echo 4; // User registered but failed to send email
+            //  echo 4; // 
             //}
         } else {
-            echo 3; // Registration failed
+            echo 3; // 
         }
         break;
 }

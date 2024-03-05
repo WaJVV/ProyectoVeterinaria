@@ -12,11 +12,11 @@
         <nav>
             <ul>
                 <li><a href="..\index.php">DrPets</a></li>
-                <li><a href="..\modu\nuestraClinica.php">Nuestra Clínica</a></li>
-                <li><a href="..\modu\servicios.php">Servicios</a></li>
-                <li><a href="..\modu\productos.php">Productos</a></li>
-                <li><a href="..\modu\contacto.php">Contacto</a></li>
-                <li><a href="..\modu\login.php">Cuenta</a></li>
+                <li><a href="..\model\nuestraClinica.php">Nuestra Clínica</a></li>
+                <li><a href="..\model\servicios.php">Servicios</a></li>
+                <li><a href="..\model\productos.php">Productos</a></li>
+                <li><a href="..\model\contacto.php">Contacto</a></li>
+                <li><a href="..\model\login.php">Cuenta</a></li>
             </ul>
         </nav>
     </header>
@@ -34,10 +34,10 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
 <div class="opciones-administrador">
     <h2>Opciones de Administrador:</h2>
     <main>
-    <button class="botones" onclick="location.href='./modu/agregarUsuario.php'">Agregar Usuario</button>
-    <button class="botones" onclick="location.href='./modu/rolAdmin.php'">Ver Usuarios</button>
-    <button class="botones" onclick="location.href='./modu/modificarUsuario.php'">Modificar Datos</button>
-    <button class="botones" onclick="location.href='./modu/eliminarUsuario.php'">Eliminar Usuario</button>
+    <button class="botones" onclick="location.href='./model/agregarUsuario.php'">Agregar Usuario</button>
+    <button class="botones" onclick="location.href='./model/rolAdmin.php'">Ver Usuarios</button>
+    <button class="botones" onclick="location.href='./model/modificarUsuario.php'">Modificar Datos</button>
+    <button class="botones" onclick="location.href='./model/eliminarUsuario.php'">Eliminar Usuario</button>
 </main>
 
 </div>
@@ -148,7 +148,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email'
     // Consulta SQL para agregar el usuario a la base de datos
     $sql = "INSERT INTO admins (nombre, apellidos, email, contrasena, usuario) VALUES ('$nombre', '$apellidos', '$email', '$hashed_password', '$new_username')";
     if ($conn->query($sql) === TRUE) {
-        header("Location: ./rolAdmiController.php?nombre=".$nombre."&apellidos=".$apellidos);
+        header("Location: ..\controller\rolAdmiController.php?nombre=".$nombre."&apellidos=".$apellidos);
         exit();
     } else {
         echo "Error al registrar usuario: " . $conn->error;
@@ -168,7 +168,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email'
 if(isset($_POST['cerrarSesion'])) {
     session_start(); // Iniciar una sesión o reanudar la existente
     session_destroy(); // Destruir todas las variables de sesión
-    header("Location: ../modu/login.php"); // Redireccionar al login.php
+    header("Location: ../model/login.php"); // Redireccionar al login.php
 }
 ?>
 Derechos Reservados &copy; 2024 

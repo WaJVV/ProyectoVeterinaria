@@ -52,46 +52,14 @@ carrusel img {
 
 /* Encabezado Menu de opciones*/
 
-header{
-    background-color: lightseagreen;  
-    color: white;
-    padding: 10px;
-    width: 100%
-}
+
 
 aside {/* formato aside*/
     width: 300px; /* Ancho deseado */
     height: 200px; /* Altura deseada */
     
 }
-nav {
-    color: white;
-    padding: 10px;
-    background-color: lightseagreen;
-    }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 20px;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-}
-/*Color al tocar la opción del menú */
-nav ul li a:hover {
-    background-color: lightgray;
-}
 /*fondo de la pantalla*/
 .content {
     margin: 20px;
@@ -400,10 +368,3 @@ button{
     margin-block-end: 50px;
   }
 
-  .nav-item.active {
-    background-color: #ADD8E6; /* Color celeste */
-}
-
-.navbar-nav .nav-item.active .nav-link {
-  background-color: #ADD8E6; /* Color celeste */
-}
