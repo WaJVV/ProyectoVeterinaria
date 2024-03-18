@@ -86,9 +86,18 @@ $result = $conn->query($sql);
     </table>
     <a href="javascript:history.back()" class="btn btn-primary">Atrás</a>
     </div>
-    <footer>
-        Derechos Reservados &copy; 2024 
-    </footer>
+    <footer class="bg-dark">
+<div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+    <div class="col-12">
+        <div class="row my-4 row-1 no-gutters">
+        <div class="col-sm-3 col-auto text-center"><small class="text-white">&#9400; Veterinaria Dr.Pet</small></div>
+        <div class="col-md-3 col-auto"></div>
+        <div class="col-md-3 col-auto"></div>
+        <div class="col my-auto text-md-left text-right text-white"> <small> veterinariaDr.Pet@outlook.com <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid "  width="25"></span> <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid "  width="25"></span></small>  </div> 
+        </div>
+    </div>
+</div>
+</footer>
 </body>
 </html>
 <?php
