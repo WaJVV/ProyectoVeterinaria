@@ -1,0 +1,57 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+/* Estilos para el contenido principal */
+.welcome-msg {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.opciones-administrador {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.botones {
+    margin-right: 10px;
+}
+
+/* Estilos para el menú desplegable */
+.menu {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.opcion-desplegable {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.opcion-desplegable:focus + .submenu,
+.opcion-desplegable:hover + .submenu {
+    display: block;
+}
