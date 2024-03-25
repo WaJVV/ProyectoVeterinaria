@@ -44,100 +44,63 @@
   </div>
 </nav>
 </header>
-<body>
 
-    <div class="welcome-msg">
-    <?php
-    // Mostrar el nombre del usuario
-    if(isset($_GET['nombre'])){
-        echo "<h3> Bienvenido (a) " . htmlspecialchars($_GET['nombre'])  . "</h3>"; 
-    } else {
-        echo "Usuario no encontrado";
-    }
-    ?>
-</div>
-<div class="opciones-administrador">
-    <h2>Opciones de Administrador:</h2>
-    <main>
-        <button class="botones" onclick="location.href='agregar_usuario.php'">Agregar Usuario</button>
-        <button class="botones" onclick="location.href='eliminar_usuario.php'">Eliminar Usuario</button>
-        <button class="botones" onclick="location.href='modificar_datos.php'">Modificar Datos</button>
-    </main>
-</div>
-<aside class="menu">
-    <h3>Menú</h3>
-    <ul>
-        <li>
-            <button class="opcion-desplegable">Tablero</button>
-            <ul class="submenu">
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Tablero</a></li>
-                <li><a href="#">Compras</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Clientes</button>
-            <ul class="submenu">
-                <li><a href="#">Lista</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Pacientes</button>
-            <ul class="submenu">
-                <li><a href="#">Lista</a></li>
-                <li><a href="#">Historial</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Servicios</button>
-            <ul class="submenu">
-                <li><a href="#">Médicos</a></li>
-                <li><a href="#">Spa</a></li>
-                <li><a href="#">Ventas</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Citas y Recordatorios</button>
-            <ul class="submenu">
-                <li><a href="#">Agendas</a></li>
-                <li>
-                    <button class="opcion-desplegable">Inventario</button>
-                    <ul class="submenu">
-                        <li><a href="#">Lista de inventario</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Informes</button>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Registros</button>
-            <ul class="submenu">
-                <li><a href="#">Correos enviados</a></li>
-                <li><a href="#">Modificación de Pacientes</a></li>
-            </ul>
-        </li>
-    </ul>
-</aside>
-
-
-
-
-<footer>
-    <!--cerrar sesión -->
-<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-    <input class="botones cerrarSesion" type="submit" value="Cerrar Sesión" name="cerrarSesion">
-</form>
 <?php
-// Comprobar si se ha pulsado el botón de cerrar sesión
-if(isset($_POST['cerrarSesion'])) {
-    session_start(); // Iniciar una sesión o reanudar la existente
-    session_destroy(); // Destruir todas las variables de sesión
-    header("Location: ../js/login.php"); // Redireccionar al login.php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "admin1";
+$password = "123";
+$dbname = "drpets";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
+
+// Consulta SQL para obtener la lista de usuarios
+$sql = "SELECT * FROM admins";
+$result = $conn->query($sql);
 ?>
-Derechos Reservados &copy; 2024 
+<body>
+    <h2>Lista de Usuarios</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo electrónico</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        // Mostrar los usuarios en la tabla
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["usuario"]. "</td><td>" . $row["nombre"]. "</td><td>" . $row["apellidos"]. "</td><td>" . $row["email"]. "</td></tr>";
+            }
+        } else {
+            echo "0 resultados";
+        }
+        ?>
+        </tbody>
+    </table>
+    <a href="javascript:history.back()" class="btn btn-primary">Atrás</a>
+    </div>
+    <footer class="bg-dark">
+<div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+    <div class="col-12">
+        <div class="row my-4 row-1 no-gutters">
+        <div class="col-sm-3 col-auto text-center"><small class="text-white">&#9400; Veterinaria Dr.Pet</small></div>
+        <div class="col-md-3 col-auto"></div>
+        <div class="col-md-3 col-auto"></div>
+        <div class="col my-auto text-md-left text-right text-white"> <small> veterinariaDr.Pet@outlook.com <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid "  width="25"></span> <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid "  width="25"></span></small>  </div> 
+        </div>
+    </div>
+</div>
 </footer>
 </body>
 </html>
+<?php
+// Cerrar conexión a la base de datos
+$conn->close();
+?>
