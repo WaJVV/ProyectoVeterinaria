@@ -1,3 +1,4 @@
+/* 
 /* Cuerpo de la página*/
 body {
     margin: 0;
@@ -50,12 +51,8 @@ carrusel img {
 }
 
 /* Encabezado Menu de opciones*/
-header{
-    background-color: lightseagreen;  
-    color: white;
-    padding: 10px;
-    width: 100%
-}
+
+
 
 aside {/* formato aside*/
     width: 300px; /* Ancho deseado */
@@ -90,8 +87,6 @@ nav ul li a {
 nav ul li a:hover {
     background-color: lightgray;
 }
-
-
 /*fondo de la pantalla*/
 .content {
     margin: 20px;
@@ -100,7 +95,10 @@ nav ul li a:hover {
 }
 
 /*Pie de página*/
+/*footer {
+========
 footer {
+>>>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:view2 cambios vale/assets/css/plantilla.css
     background-color: lightseagreen;
     color: white;
     padding: 10px;
@@ -108,8 +106,8 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-}
-
+<<<<<<<< HEAD:views/assets/css/plantilla.css
+}*/
 /*formulario de contacto*/
 .contact-form {
     background-color: #ffffff;
@@ -159,6 +157,11 @@ footer {
     background-color: lightseagreen;
 }
 .contenedor {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  font-size: 15px;
     display: flex;
     justify-content: space-between;
     padding: 25px;
@@ -256,10 +259,8 @@ footer {
     text-align: justify;
     border-radius: 25px;
     margin-block-end: 50px;
-
-
   }
-  
+
   .contacto{
     background-color: lightslategray;
     color:#ffffff;
@@ -393,3 +394,5 @@ button{
     padding: 35px;
     margin-block-end: 50px;
   }
+
+
