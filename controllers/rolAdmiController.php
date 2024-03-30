@@ -64,64 +64,60 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
     <button class="botones" onclick="location.href='./modu/modificarUsuario.php'">Modificar Datos</button>
     <button class="botones" onclick="location.href='./modu/eliminarUsuario.php'">Eliminar Usuario</button>
 </main>
-
 </div>
-<aside class="menu">
-    <h3>Menú</h3>
-    <ul>
-        <li>
-            <button class="opcion-desplegable">Tablero</button>
-            <ul class="submenu">
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Tablero</a></li>
-                <li><a href="#">Compras</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Clientes</button>
-            <ul class="submenu">
-                <li><a href="#">Lista</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Pacientes</button>
-            <ul class="submenu">
-                <li><a href="#">Lista</a></li>
-                <li><a href="#">Historial</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Servicios</button>
-            <ul class="submenu">
-                <li><a href="#">Médicos</a></li>
-                <li><a href="#">Spa</a></li>
-                <li><a href="#">Ventas</a></li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Citas y Recordatorios</button>
-            <ul class="submenu">
-                <li><a href="#">Agendas</a></li>
-                <li>
-                    <button class="opcion-desplegable">Inventario</button>
-                    <ul class="submenu">
-                        <li><a href="#">Lista de inventario</a></li>
+<div>
+    <aside class="menu">
+        <h3>Menú</h3>
+        <ul>
+            <li>
+                <button class="opcion-desplegable">Tablero</button>
+                <ul class="submenu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Compras</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Clientes</button>
+                <ul class="submenu">
+                    <li><a href="#">Lista</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Pacientes</button>
+                <ul class="submenu">
+                    <li><a href="#">Lista</a></li>
+                    <li><a href="#">Historial</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Servicios</button>
+                <ul class="submenu">
+                    <li><a href="#">Médicos</a></li>
+                    <li><a href="#">Spa</a></li>
+                    <li><a href="#">Ventas</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Citas y Recordatorios</button>
+                <ul class="submenu">
+                    <li><a href="..\models\agenda.php">Agendas</a></li>
+                    <li><a href="#">Inventario</a></li>
                     </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Informes</button>
-        </li>
-        <li>
-            <button class="opcion-desplegable">Registros</button>
-            <ul class="submenu">
-                <li><a href="#">Correos enviados</a></li>
-                <li><a href="#">Modificación de Pacientes</a></li>
-            </ul>
-        </li>
-    </ul>
-</aside>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Informes</button>
+            </li>
+            <li>
+                <button class="opcion-desplegable">Registros</button>
+                <ul class="submenu">
+                    <li><a href="#">Correos enviados</a></li>
+                    <li><a href="#">Modificación de Pacientes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+</div>
+
 
 <div class= back-button>
 <button class="back-button" onclick="atras()">Atrás</button>
