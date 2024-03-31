@@ -20,14 +20,14 @@ function eliminarCita($idCita) {
         // La cita se eliminó correctamente
         echo "Cita eliminada correctamente";
     } else {
-        // Hubo un error al eliminar la cita
+        // Error al eliminar la cita
         echo "Error al eliminar la cita: " . $conn->error;
     }
 
     $conn->close();
 }
 
-// Verificar si se recibió un ID de cita para eliminar
+// Verifica ID de cita para eliminar
 if (isset($_POST["idCita"])) {
     $idCita = $_POST["idCita"];
     eliminarCita($idCita);
