@@ -16,7 +16,9 @@ switch ($_GET["op"]) {
                 "4" => $reg->getApellidoMaterno(),
                 "5" => $reg->getNacimientoCliente(),
                 "6" => $reg->getDireccion(),
-                "7" => $reg->getTelefonoCelular()
+                "7" => $reg->getTelefonoCelular(),
+                "8" => ""
+
             );
         }
         $resultados = array(
@@ -33,7 +35,7 @@ switch ($_GET["op"]) {
         $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
         $apellidoPaterno = isset($_POST["apellidoPaterno"]) ? trim($_POST["apellidoPaterno"]) : "";
         $apellidoMaterno = isset($_POST["apellidoMaterno"]) ? trim($_POST["apellidoMaterno"]) : "";
-        $nacimiento = isset($_POST["nacimiento"]) ? trim($_POST["nacimiento"]) : "";
+        $nacimientoCliente = isset($_POST["nacimientoCliente"]) ? trim($_POST["nacimientoCliente"]) : "";
         $direccion = isset($_POST["direccion"]) ? trim($_POST["direccion"]) : "";
         $telefonoCelular = isset($_POST["telefonoCelular"]) ? trim($_POST["telefonoCelular"]) : "";
 
@@ -42,7 +44,7 @@ switch ($_GET["op"]) {
         $cliente->setNombre($nombre);
         $cliente->setApellidoPaterno($apellidoPaterno);
         $cliente->setApellidoMaterno($apellidoMaterno);
-        $cliente->setNacimientoCliente($nacimiento);
+        $cliente->setNacimientoCliente($nacimientoCliente);
         $cliente->setDireccion($direccion);
         $cliente->setTelefonoCelular($telefonoCelular);
 
