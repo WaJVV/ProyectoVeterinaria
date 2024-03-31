@@ -103,7 +103,7 @@ class Cliente extends Conexion
         self::$cnx = null;
     }
     public function listarTodosDb(){
-        $query = "SELECT * FROM Clientes";
+        $query = "SELECT * FROM clientes";
         $arr = array();
         try {
             self::getConexion();
@@ -130,7 +130,7 @@ class Cliente extends Conexion
         }
     }
     public function verificarExistenciaDb(){
-        $query = "SELECT * FROM Clientes WHERE identificacion=:identificacion";
+        $query = "SELECT * FROM clientes WHERE identificacion=:identificacion";
         try {
             self::getConexion();
             $resultado = self::$cnx->prepare($query);      
@@ -150,7 +150,7 @@ class Cliente extends Conexion
         }
     }
     public function guardarEnDb(){
-        $query = "INSERT INTO `Clientes`(`identificacion`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `nacimientoCliente`, `direccion`, `telefonoCelular`) VALUES (:identificacion, :nombre, :apellidoPaterno, :apellidoMaterno, :nacimientoCliente, :direccion, :telefonoCelular)";
+        $query = "INSERT INTO `clientes`(`identificacion`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `nacimientoCliente`, `direccion`, `telefonoCelular`) VALUES (:identificacion, :nombre, :apellidoPaterno, :apellidoMaterno, :nacimientoCliente, :direccion, :telefonoCelular)";
         try {
             self::getConexion();
             $identificacion = $this->getIdentificacion();
@@ -178,7 +178,7 @@ class Cliente extends Conexion
         }
     }
     public function llenarCampos($id){
-        $query = "SELECT * FROM Clientes WHERE idCliente = :id";
+        $query = "SELECT * FROM clientes WHERE idCliente = :id";
         try {
             self::getConexion();
             $resultado = self::$cnx->prepare($query);
@@ -207,3 +207,4 @@ class Cliente extends Conexion
 
 }
 ?>
+

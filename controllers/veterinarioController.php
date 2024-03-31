@@ -11,7 +11,9 @@ switch ($_GET["op"]) {
                 "0" => $reg->getIdVeterinario(),
                 "1" => $reg->getNombreVeterinario(),
                 "2" => $reg->getApellidoPaterno(),
-                "3" => $reg->getCodigoVeterinario()
+                "3" => $reg->getCodigoVeterinario(),
+                "4" => ""
+
             );
         }
         $resultados = array(
@@ -48,5 +50,6 @@ switch ($_GET["op"]) {
             echo 3; // Fallo al realizar el registro del veterinario
         }
         break;
+        
 }
 ?>

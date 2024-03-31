@@ -2,24 +2,20 @@
 function limpiarForms() {
     $('#paciente_add').trigger('reset'); // Cambiado de "#usuario_add" a "#paciente_add"
     $('#paciente_update').trigger('reset'); // Cambiado de "#usuario_update" a "#paciente_update"
+    $('#paciente_add').trigger('reset'); // Agregado para limpiar el formulario de proveedores
+
 }
 
-/* Función para cancelar el uso de formulario de modificación */
-function cancelarForm() {
-    limpiarForms();
-    $('#formulario_add').show();
-    $('#formulario_update').hide();
-}
 
 /* Función para cargar el listado en el Datatable */
-function listarPacientesTodos() { // Cambiado de "listarUsuariosTodos" a "listarPacientesTodos"
+function listarPacientesTodos() { 
     tabla = $('#tbllistado').dataTable({
         "processing": true, // Activamos el procesamiento de datatables
         "serverSide": true, // Paginación y filtrado del lado del servidor
         "dom": 'Bfrtip', // Definimos los elementos del control de tabla
         "buttons": ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
         "ajax": {
-            "url": '../controllers/pacientesControllers.php?op=listar_para_tabla', // Cambiado de "usuarioController.php" a "pacientesController.php"
+            "url": '../controllers/pacientesControllers.php?op=listar_para_tabla', 
             "type": 'GET',
             "dataType": 'json',
             "error": function(e) {
@@ -77,7 +73,7 @@ $('#paciente_add').on('submit', function(event) {
 });
 
 
-/* Función para activar pacientes */
+/* Función para activar pacientes 
 function activar(id) {
     bootbox.confirm('¿Está seguro de activar el paciente?', function(result) {
         if (result) {
@@ -104,7 +100,7 @@ function activar(id) {
     });
 }
 
-/* Función para desactivar pacientes */
+Función para desactivar pacientes 
 function desactivar(id) {
     bootbox.confirm('¿Está seguro de desactivar el paciente?', function(result) {
         if (result) {
@@ -130,26 +126,24 @@ function desactivar(id) {
         }
     });
 }
-
+*/
 
 /* Habilitación de formulario de modificación al presionar el botón en la tabla */
+/* Habilitación de formulario de modificación al presionar el botón en la tabla */
 $('#tbllistado tbody').on('click', 'button[id="modificarPaciente"]', function () {
-    var rowData = $('#tbllistado').DataTable().row($(this).parents('tr')).data();
-    if (rowData) {
-        $('#EIdMascota').val(rowData[0]);
-        $('#Enombre').val(rowData[1]);
-        $('#Eraza').val(rowData[2]);
-        $('#Epeso').val(rowData[3]);
-        $('#EnacimientoMascota').val(rowData[4]);
-        $('#EidCliente').val(rowData[5]);
-        limpiarForms();
-        $('#formulario_add').hide();
-        $('#formulario_update').show();
-    } else {
-        console.error("No se encontraron datos para la fila seleccionada.");
-    }
+    var data = $('#tbllistado').DataTable().row($(this).parents('tr')).data();
+    limpiarForms();
+    $('#EIdMascota').val(data[0]);
+    $('#Enombre').val(data[1]);
+    $('#Eraza').val(data[2]);
+    $('#Epeso').val(data[3]);
+    $('#EnacimientoMascota').val(data[4]);
+    $('#EidCliente').val(data[5]);
+    $('#formulario_add').hide();
+    $('#formulario_update').show();
     return false;
 });
+
 
 
 /*Funcion para modificacion de datos de paciente*/

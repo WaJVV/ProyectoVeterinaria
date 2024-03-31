@@ -82,7 +82,7 @@ class Paciente extends Conexion
     }
 
     public function listarTodosDb(){
-        $query = "SELECT * FROM pacientes";
+        $query = "SELECT * FROM mascotas";
         $arr = array();
         try {
             self::getConexion();
@@ -95,7 +95,7 @@ class Paciente extends Conexion
                 $user->setNombre($encontrado['nombre']);
                 $user->setRaza($encontrado['raza']);
                 $user->setPeso($encontrado['peso']);
-                $user->setNacimientoMascota($encontrado['nacimiento_mascota']); // Modificamos el nombre de la clave
+                $user->setNacimientoMascota($encontrado['nacimientoMascota']); // Modificamos el nombre de la clave
                 $user->setIdCliente($encontrado['idCliente']);
                 $arr[] = $user;
             }
@@ -108,7 +108,7 @@ class Paciente extends Conexion
     }
 
     public function verificarExistenciaDb(){
-        $query = "SELECT * FROM pacientes WHERE nombre=:nombre";
+        $query = "SELECT * FROM mascotas WHERE nombre=:nombre";
         try {
             self::getConexion();
             $resultado = self::$cnx->prepare($query);       
@@ -129,7 +129,7 @@ class Paciente extends Conexion
     }
     
     public function guardarEnDb(){
-        $query = "INSERT INTO `pacientes`(`nombre`, `raza`, `peso`, `nacimiento_mascota`, `id_Cliente`, `created_at`) VALUES (:nombre,:raza,:peso,:nacimientoMascota,:idCliente,now())";
+        $query = "INSERT INTO `mascotas`(`nombre`, `raza`, `peso`, `nacimientoMascota`, `idCliente`) VALUES (:nombre,:raza,:peso,:nacimientoMascota,:idCliente)";
         try {
             self::getConexion();
             $nombre = strtoupper($this->getNombre());
@@ -152,6 +152,8 @@ class Paciente extends Conexion
             return json_encode($error);
         }
     }
-   
+    
+    
+    
 }
 ?>

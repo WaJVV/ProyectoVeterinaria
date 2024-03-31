@@ -40,8 +40,15 @@
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\proveedor.php">Proveedor</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="..\views\cliente.php">Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
+      </li>
     </ul>
   </div>
+
 </nav>
 </header>
 <body>

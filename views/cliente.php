@@ -53,6 +53,7 @@
 <body>
     <div class="row">
     <!-- Formulario de creacion de clientes -->
+    <!-- Formulario de creacion de clientes 2 -->
     <div class="col-md-12" id="formulario_add">
         <div class="card card-dark">
             <div class="card-header">
