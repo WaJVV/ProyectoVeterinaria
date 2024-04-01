@@ -2,7 +2,7 @@
 .icon-cart{
     width: 40px;
     height: 40px;
-    stroke: black;
+    stroke: white;
 }
 
 .icon-cart:hover{
@@ -164,4 +164,26 @@ img{
     color: white;
     padding: 15px 10px;
     cursor: pointer;
+}
+
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    font-size: 20px; /* Tamaño de las estrellas */
+}
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.4em; /* Espacio entre estrellas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre las estrellas */
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before,
+.rating > span.clicked:before,
+.rating > span.clicked ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold; /* Color de las estrellas al pasar sobre ellas */
 }
