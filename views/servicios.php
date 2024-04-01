@@ -12,15 +12,12 @@
   </head>
   <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand text-white" href="#">Dr. Pet</a> 
+  <a class="navbar-brand text-white" href="..\views\index.php">Dr. Pet</a> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
-        <a class="nav-link text-white" href="..\views\index.php"> Inicio <span class="sr-only">(current)</span></a>
-      </li>  
       <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\nuestraClinica.php">Nuestra Clínica <span class="sr-only">(current)</span></a>
       </li>

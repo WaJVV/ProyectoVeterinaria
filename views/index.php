@@ -16,9 +16,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
-        <a class="nav-link text-white" href="..\views\index.php"> Inicio <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\nuestraClinica.php">Nuestra Clínica <span class="sr-only">(current)</span></a>
       </li>
@@ -111,6 +108,23 @@
   </div>
 </div>
 <br></br>
+
+<!--Comentarios-->
+<h2>Caja de Comentarios</h2>
+<br>
+<p class="lead">Introduce tu comentario de nuestra página y servicios brindados.</p>
+<br>
+<label for="nombreC" class="form-label">Nombre:</label>
+<input class="form-control" name="nombreC" type="text" id="nombreC" placeholder="Escribe tu nombre aquí"></input>
+<br>
+<label for="comentario" class="form-label">Comentario:</label>
+<textarea class="form-control" name="comentario" cols="30" rows="5" type="text" id="comentario"
+placeholder="Escribe tu comentario aquí...."></textarea>
+<br>
+<input class="btn btn-primary" type="submit" value="Enviar">
+<br>
+<br>
+<br>
 </body>
 <footer class="bg-dark">
    
