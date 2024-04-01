@@ -119,13 +119,12 @@ try {
 $fecha_inicio = $_POST['fecha_inicio'];
 $fecha_final = $_POST['fecha_final'];
 
-// Consulta a la base de datos con el rango de fechas y unión con la tabla clientes
-$stmt = $dbh->prepare('SELECT c.*, cl.nombre AS nombre_cliente, cl.apellido_paterno, cl.apellido_materno FROM citas c JOIN clientes cl ON c.idCliente = cl.idCliente WHERE c.fecha_visita BETWEEN :fecha_inicio AND :fecha_final');
+/// Consulta a la base de datos con el rango de fechas y unión con la tabla clientes y veterinario
+$stmt = $dbh->prepare('SELECT c.*, cl.nombre AS nombre_cliente, cl.apellidoPaterno, cl.apellidoMaterno, CONCAT(v.nombre_veterinario, " ", v.apellido_paterno) AS nombre_veterinario FROM citas c JOIN clientes cl ON c.idCliente = cl.idCliente JOIN veterinario v ON c.idVeterinario = v.idVeterinario WHERE c.fecha_visita BETWEEN :fecha_inicio AND :fecha_final');
 $stmt->bindParam(':fecha_inicio', $fecha_inicio);
 $stmt->bindParam(':fecha_final', $fecha_final);
 $stmt->execute();
 $citas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
 // Creación del objeto PDF con tamaño de página personalizado (ancho y alto en milímetros)
 $pdf = new PDF('L','mm','Letter'); // 'L' para orientación horizontal
@@ -138,9 +137,10 @@ $header = array('ID', 'Mascota', 'Fecha Visita', 'Motivo', 'Diagnóstico', 'Trat
 // Contenido de la tabla
 $data = array();
 foreach($citas as $cita){
-    $nombreCliente = $cita['nombre_cliente'] . ' ' . $cita['apellido_paterno'] . ' ' . $cita['apellido_materno'];
-    $data[] = array($cita['idCitas'], $cita['idMascota'], $cita['fecha_visita'], $cita['motivo'], $cita['diagnostico'], $cita['tratamiento'], $nombreCliente, $cita['idVeterinario']);
+    $nombreCliente = $cita['nombre_cliente'] . ' ' . $cita['apellidoPaterno'] . ' ' . $cita['apellidoMaterno'];
+    $data[] = array($cita['idCitas'], $cita['idMascota'], $cita['fecha_visita'], $cita['motivo'], $cita['diagnostico'], $cita['tratamiento'], $nombreCliente, $cita['nombre_veterinario']);
 }
+
 
 // Generar tabla en el PDF
 $pdf->BodyTable($header, $data);

@@ -136,7 +136,6 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                             <button class="opcion-desplegable btn btn-link">Informes</button>
                                             <ul class="submenu">
                                                 <li><a href="..\models\reportes.php">Reportes</a></li>
-                                                <li><a href="#">Gráficos</a></li>
                                             </ul>
                                         </li>
                                     </ul>
