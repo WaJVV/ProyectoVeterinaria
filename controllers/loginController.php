@@ -1,4 +1,4 @@
-<<<<<<< HEAD:views/loginController.php
+
 <?php
 // Verificar si se enviaron los datos del formulario
 if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
@@ -33,7 +33,7 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
         exit();
     } else {
         // Credenciales incorrectas, redirigir a la página de login con un mensaje de error
-        header("Location: ../login.php?error=incorrecto");
+        header("Location: ../models/login.php?error=incorrecto");
         exit();
     }
     
@@ -42,4 +42,4 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
 }
 ?>
 
->>>>>>> 336bd43c84ad5ff738b5f6f8e3284dd94935b2cc:drPets/view/assets/loginController.php
+

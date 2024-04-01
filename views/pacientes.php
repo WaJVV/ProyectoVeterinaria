@@ -29,7 +29,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\usuario.php">Pacientes</a>

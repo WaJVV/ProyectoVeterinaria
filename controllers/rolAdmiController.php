@@ -4,7 +4,7 @@ session_start(); // Iniciar una sesión o reanudar la existente
 // Comprobar si se ha pulsado el botón de cerrar sesión
 if(isset($_POST['cerrarSesion'])) {
     session_destroy(); // Destruir todas las variables de sesión
-    header("Location: ../views/login.php"); // Redireccionar al login.php
+    header("Location: ../models/login.php"); // Redireccionar al login.php
     exit; // Salir del script para evitar cualquier salida adicional
 }
 ?>
@@ -50,7 +50,7 @@ if(isset($_POST['cerrarSesion'])) {
                         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+                        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
@@ -85,7 +85,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                     Usuario</button>
             </div>
             <div class="col-sm-6 col-md-2">
-                <button class="btn btn-primary btn-block" onclick="location.href='../views/rolAdmi.php'">Ver
+                <button class="btn btn-primary btn-block" onclick="location.href='../models/rolAdmi.php'">Ver
                     Usuarios</button>
             </div>
             <div class="col-sm-6 col-md-2">
@@ -135,7 +135,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                         <li class="list-group-item">
                                             <button class="opcion-desplegable btn btn-link">Informes</button>
                                             <ul class="submenu">
-                                                <li><a href="#">Reportes</a></li>
+                                                <li><a href="..\models\reportes.php">Reportes</a></li>
                                                 <li><a href="#">Gráficos</a></li>
                                             </ul>
                                         </li>
@@ -223,7 +223,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                 </script>
             </div>
         </div>
-
+        
         <?php
 // Verificar si se enviaron los datos del formulario de Agregar usuario
 if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
@@ -233,44 +233,46 @@ if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email'
     $password = "123";
     $dbname = "drpets";
 
-    // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Crear una nueva conexión PDO
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // Habilitar el manejo de errores PDO
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+        // Obtener el último número de usuario registrado
+        $sql_last_user = "SELECT MAX(SUBSTRING(usuario, 6)) as last_user FROM admins";
+        $result_last_user = $conn->query($sql_last_user);
+        $row_last_user = $result_last_user->fetch(PDO::FETCH_ASSOC);
+        $last_user_number = intval($row_last_user['last_user']);
 
-    // Obtener el último número de usuario registrado
-    $sql_last_user = "SELECT MAX(SUBSTRING(usuario, 6)) as last_user FROM admins";
-    $result_last_user = $conn->query($sql_last_user);
-    $row_last_user = $result_last_user->fetch_assoc();
-    $last_user_number = intval($row_last_user['last_user']);
+        // Generar el nuevo nombre de usuario
+        $new_user_number = $last_user_number + 1;
+        $new_username = "admin" . $new_user_number;
 
-    // Generar el nuevo nombre de usuario
-    $new_user_number = $last_user_number + 1;
-    $new_username = "admin" . $new_user_number;
+        // Obtener los datos del formulario
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $email = $_POST['email'];
+        $contrasena = $_POST['contrasena'];
 
-    // Obtener los datos del formulario
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $email = $_POST['email'];
-    $contrasena = $_POST['contrasena'];
+        // Encriptar la contraseña
+        $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
 
-    // Encriptar la contraseña
-    $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
+        // Consulta SQL para agregar el usuario a la base de datos
+        $sql = "INSERT INTO admins (nombre, apellidos, email, contrasena, usuario) VALUES ('$nombre', '$apellidos', '$email', '$hashed_password', '$new_username')";
+        if ($conn->exec($sql)) {
+            header("Location: ./rolAdmiController.php?nombre=".$nombre."&apellidos=".$apellidos);
+            exit();
+        } else {
+            echo "Error al registrar usuario";
+        }
 
-    // Consulta SQL para agregar el usuario a la base de datos
-    $sql = "INSERT INTO admins (nombre, apellidos, email, contrasena, usuario) VALUES ('$nombre', '$apellidos', '$email', '$hashed_password', '$new_username')";
-    if ($conn->query($sql) === TRUE) {
-        header("Location: ./rolAdmiController.php?nombre=".$nombre."&apellidos=".$apellidos);
-        exit();
-    } else {
-        echo "Error al registrar usuario: " . $conn->error;
+    } catch(PDOException $e) {
+        echo "Error de conexión: " . $e->getMessage();
     }
 
     // Cerrar conexión
-    $conn->close();
+    $conn = null;
 }
 ?>
 

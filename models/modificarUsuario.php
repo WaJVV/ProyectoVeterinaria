@@ -39,7 +39,7 @@
                         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+                        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
@@ -68,58 +68,62 @@
 </div>
 
         <section class="Modificar">
-            <?php
-        // Buscar los datos del aside donde buscamos los usuarios
-        if(isset($_POST['usuario'])) {
-            // Datos de conexión a la base de datos
-            $servername = "localhost";
-            $username = "admin1";
-            $password = "123";
-            $dbname = "drpets";
+        <?php
+// Buscar los datos del aside donde buscamos los usuarios
+if(isset($_POST['usuario'])) {
+    // Datos de conexión a la base de datos
+    $servername = "localhost";
+    $username = "admin1";
+    $password = "123";
+    $dbname = "drpets";
 
-            // Crear conexión
-            $conn = new mysqli($servername, $username, $password, $dbname);
+    try {
+        // Crear conexión PDO
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // Configurar PDO para que lance excepciones en caso de errores
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // Verificar conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
+        // Obtener el nombre de usuario del formulario
+        $nombre_usuario = $_POST['usuario'];
+
+        // Consulta SQL para obtener información del usuario con el nombre de usuario especificado
+        $sql = "SELECT * FROM admins WHERE usuario=:usuario";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':usuario', $nombre_usuario);
+        $stmt->execute();
+
+        // Mostrar la información del usuario en una tabla si se encontraron resultados
+        if ($stmt->rowCount() > 0) {
+            echo "<h2 class='text-center'>Información del Usuario</h2>";
+            echo "<div class='container'>";
+            echo "<div class='table-responsive'>";
+            echo "<table class='table table-striped table-bordered'>";
+            echo "<thead class='thead-dark'><tr><th>Nombre de Usuario</th><th>Nombre</th><th>Apellidos</th><th>Email</th></tr></thead>";
+            echo "<tbody>";
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . $row["usuario"]. "</td>";
+                echo "<td>" . $row["nombre"]. "</td>";
+                echo "<td>" . $row["apellidos"]. "</td>";
+                echo "<td>" . $row["email"]. "</td>";
+                echo "</tr>";
             }
-
-            // Obtener el nombre de usuario del formulario
-            $nombre_usuario = $_POST['usuario'];
-
-            // Consulta SQL para obtener información del usuario con el nombre de usuario especificado
-            $sql = "SELECT * FROM admins WHERE usuario='$nombre_usuario'";
-            $result = $conn->query($sql);
-
-            // Mostrar la información del usuario en una tabla si se encontraron resultados
-            if ($result->num_rows > 0) {
-                echo "<h2 class='text-center'>Información del Usuario</h2>";
-                echo "<div class='container'>";
-                echo "<div class='table-responsive'>";
-                echo "<table class='table table-striped table-bordered'>";
-                echo "<thead class='thead-dark'><tr><th>Nombre de Usuario</th><th>Nombre</th><th>Apellidos</th><th>Email</th></tr></thead>";
-                echo "<tbody>";
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row["usuario"]. "</td>";
-                    echo "<td>" . $row["nombre"]. "</td>";
-                    echo "<td>" . $row["apellidos"]. "</td>";
-                    echo "<td>" . $row["email"]. "</td>";
-                    echo "</tr>";
-                }
-                echo "</tbody>";
-                echo "</table>";
-                echo "</div>";
-                echo "</div>";
-            } else {
-                echo "Usuario no encontrado";
-            }
-
-            // Cerrar conexión
-            $conn->close();
+            echo "</tbody>";
+            echo "</table>";
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Usuario no encontrado";
         }
-        ?>
+    } catch(PDOException $e) {
+        echo "Error al conectar a la base de datos: " . $e->getMessage();
+    }
+
+    // Cerrar conexión
+    $conn = null;
+}
+?>
+
         </section>
 
     <main class="mt-1">
@@ -153,8 +157,7 @@
     </main>
 </div>
 
-
-    <?php
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si se recibieron los datos necesarios
     if (isset($_POST['usuario']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
@@ -164,37 +167,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = "123";
         $dbname = "drpets";
 
-        // Crear conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        try {
+            // Crear conexión PDO
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // Configurar PDO para que lance excepciones en caso de errores
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Verificar conexión
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
+            // Obtener los datos del formulario
+            $id_usuario = $_POST['usuario'];
+            $nombre = $_POST['nombre'];
+            $apellidos = $_POST['apellidos'];
+            $email = $_POST['email'];
+            $contrasena = $_POST['contrasena'];
 
-        // Obtener los datos del formulario
-        $id_usuario = $_POST['usuario'];
-        $nombre = $_POST['nombre'];
-        $apellidos = $_POST['apellidos'];
-        $email = $_POST['email'];
-        $contrasena = $_POST['contrasena'];
+            // Consulta SQL para actualizar los datos del usuario
+            $sql = "UPDATE admins SET nombre=:nombre, apellidos=:apellidos, email=:email, contrasena=:contrasena WHERE usuario=:id_usuario";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':nombre', $nombre);
+            $stmt->bindParam(':apellidos', $apellidos);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':contrasena', $contrasena);
+            $stmt->bindParam(':id_usuario', $id_usuario);
+            $stmt->execute();
 
-        // Consulta SQL para actualizar los datos del usuario
-        $sql = "UPDATE admins SET nombre='$nombre', apellidos='$apellidos', email='$email', contrasena='$contrasena' WHERE usuario='$id_usuario'";
-
-        if ($conn->query($sql) === TRUE) {
             echo "Usuario actualizado correctamente";
-        } else {
-            echo "Error al actualizar usuario: " . $conn->error;
+        } catch(PDOException $e) {
+            echo "Error al actualizar usuario: " . $e->getMessage();
         }
 
         // Cerrar conexión
-        $conn->close();
+        $conn = null;
     } else {
         echo "Faltan datos para actualizar el usuario";
     }
 }
 ?>
+
 
     <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>
 
