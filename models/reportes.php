@@ -96,8 +96,8 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <h5 class="card-title">Cumpleañeros</h5>
-                        <p class="card-text">Contenido de cumpleañeros.</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <p class="card-text">Listado de nuestros cumpleaños del mes.</p>
+                        <a href="..\models\reportecumple.php" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -109,6 +109,13 @@
         <h1 class= "text-center">Gráficos</h1>
     </div>
 
+    <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>
+    <script>
+        function atras() {
+            window.history.back();
+        }
+    </script>
+    
     <footer class="bg-dark">
         <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
             <div class="col-12">
@@ -128,6 +135,8 @@
             </div>
         </div>
     </footer>
+
+
 </body>
 
 </html>
