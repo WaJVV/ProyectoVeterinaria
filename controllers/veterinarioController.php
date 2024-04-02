@@ -4,9 +4,9 @@ require_once '../models/Veterinario.php';
 switch ($_GET["op"]) {
     case 'listar_para_tabla':
         $veterinario = new Veterinario();
-        $veterinarios = $veterinario->listarTodosDb();
+        $veterinario = $veterinario->listarTodosDb();
         $data = array();
-        foreach ($veterinarios as $reg) {
+        foreach ($veterinario as $reg) {
             $data[] = array(
                 "0" => $reg->getIdVeterinario(),
                 "1" => $reg->getNombreVeterinario(),
@@ -27,9 +27,9 @@ switch ($_GET["op"]) {
 
     case 'insertar':
         $idVeterinario = isset($_POST["idVeterinario"]) ? trim($_POST["idVeterinario"]) : "";
-        $nombreVeterinario = isset($_POST["nombreVeterinario"]) ? trim($_POST["nombreVeterinario"]) : "";
-        $apellidoPaterno = isset($_POST["apellidoPaterno"]) ? trim($_POST["apellidoPaterno"]) : "";
-        $codigoVeterinario = isset($_POST["codigoVeterinario"]) ? trim($_POST["codigoVeterinario"]) : "";
+        $nombreVeterinario = isset($_POST["nombre_veterinario"]) ? trim($_POST["nombre_veterinario"]) : "";
+        $apellidoPaterno = isset($_POST["apellido_paterno"]) ? trim($_POST["apellido_paterno"]) : "";
+        $codigoVeterinario = isset($_POST["codigo_veterinario"]) ? trim($_POST["codigo_veterinario"]) : "";
 
         // Crear el objeto Veterinario y establecer los valores
         $veterinario = new Veterinario();

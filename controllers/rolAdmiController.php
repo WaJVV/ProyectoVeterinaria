@@ -114,14 +114,13 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                         <li class="list-group-item">
                                             <button class="opcion-desplegable btn btn-link">Clientes</button>
                                             <ul class="submenu">
-                                                <li><a href="#">Lista</a></li>
+                                                <li><a href="..\views\cliente.php">Lista</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">
                                             <button class="opcion-desplegable btn btn-link">Pacientes</button>
                                             <ul class="submenu">
-                                                <li><a href="#">Lista</a></li>
-                                                <li><a href="#">Historial</a></li>
+                                                <li><a href="..\views\pacientes.php">Lista</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">
@@ -129,7 +128,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                                 Recordatorios</button>
                                             <ul class="submenu">
                                                 <li><a href="..\models\agenda.php">Agendas</a></li>
-                                                <li><a href="#">Inventario</a></li>
+                                                <li><a href="..\views\productoInventario.php">Inventario</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">
@@ -222,7 +221,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                 </script>
             </div>
         </div>
-        
+
         <?php
 // Verificar si se enviaron los datos del formulario de Agregar usuario
 if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
