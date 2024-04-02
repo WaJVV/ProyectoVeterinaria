@@ -8,9 +8,9 @@ class Veterinario extends Conexion
     =============================================*/
     protected static $cnx;
     private $idVeterinario = null;
-    private $nombreVeterinario = null;
-    private $apellidoPaterno = null;
-    private $codigoVeterinario = null;
+    private $nombre_veterinario = null;
+    private $apellido_paterno = null;
+    private $codigo_veterinario = null;
     /*=====  End of Atributos de la Clase  ======*/
 
     /*=============================================
@@ -32,27 +32,27 @@ class Veterinario extends Conexion
     }
     public function getNombreVeterinario()
     {
-        return $this->nombreVeterinario;
+        return $this->nombre_veterinario;
     }
-    public function setNombreVeterinario($nombreVeterinario)
+    public function setNombreVeterinario($nombre_veterinario)
     {
-        $this->nombreVeterinario = $nombreVeterinario;
+        $this->nombre_veterinario = $nombre_veterinario;
     }
     public function getApellidoPaterno()
     {
-        return $this->apellidoPaterno;
+        return $this->apellido_paterno;
     }
-    public function setApellidoPaterno($apellidoPaterno)
+    public function setApellidoPaterno($apellido_paterno)
     {
-        $this->apellidoPaterno = $apellidoPaterno;
+        $this->apellido_paterno = $apellido_paterno;
     }
     public function getCodigoVeterinario()
     {
-        return $this->codigoVeterinario;
+        return $this->codigo_veterinario;
     }
-    public function setCodigoVeterinario($codigoVeterinario)
+    public function setCodigoVeterinario($codigo_veterinario)
     {
-        $this->codigoVeterinario = $codigoVeterinario;
+        $this->codigo_veterinario = $codigo_veterinario;
     }
     /*=====  End of Encapsuladores de la Clase  ======*/
     public static function getConexion(){
@@ -64,7 +64,7 @@ class Veterinario extends Conexion
     }
     
     public function listarTodosDb(){
-    $query = "SELECT * FROM veterinarios";
+    $query = "SELECT * FROM Veterinario";
     $arr = array();
     try {
         self::getConexion();
@@ -75,9 +75,9 @@ class Veterinario extends Conexion
             $usuario = new Veterinario();
             // Agregar los nuevos atributos de veterinario
             $usuario->setIdVeterinario($encontrado['idVeterinario']);
-            $usuario->setNombreVeterinario($encontrado['nombreVeterinario']);
-            $usuario->setApellidoPaterno($encontrado['apellidoPaterno']);
-            $usuario->setCodigoVeterinario($encontrado['codigoVeterinario']);
+            $usuario->setNombreVeterinario($encontrado['nombre_veterinario']);
+            $usuario->setApellidoPaterno($encontrado['apellido_paterno']);
+            $usuario->setCodigoVeterinario($encontrado['codigo_veterinario']);
             $arr[] = $usuario;
         }
         return $arr;
@@ -89,12 +89,12 @@ class Veterinario extends Conexion
 }
 
 public function verificarExistenciaDb(){
-    $query = "SELECT * FROM veterinarios WHERE codigoVeterinario=:codigoVeterinario";
+    $query = "SELECT * FROM Veterinario WHERE codigo_veterinario=:codigo_veterinario";
     try {
         self::getConexion();
         $resultado = self::$cnx->prepare($query);		
         $raza = $this->getCodigoVeterinario();	
-        $resultado->bindParam(":codigoVeterinario", $raza, PDO::PARAM_STR);
+        $resultado->bindParam(":codigo_veterinario", $raza, PDO::PARAM_STR);
         $resultado->execute();
         self::desconectar();
         $encontrado = false;
@@ -110,7 +110,7 @@ public function verificarExistenciaDb(){
 }
 
 public function guardarEnDb(){
-    $query = "INSERT INTO `veterinarios`(`idVeterinario`, `nombreVeterinario`, `apellidoPaterno`, `codigoVeterinario`) VALUES (:idVeterinario, :nombreVeterinario, :apellidoPaterno, :codigoVeterinario)";
+    $query = "INSERT INTO `Veterinario`(`idVeterinario`, `nombre_veterinario`, `apellido_paterno`, `codigo_veterinario`) VALUES (:idVeterinario, :nombre_veterinario, :apellido_paterno, :codigo_veterinario)";
     try {
         self::getConexion();
         $idVeterinario = $this->getIdVeterinario();
@@ -120,9 +120,9 @@ public function guardarEnDb(){
 
         $resultado = self::$cnx->prepare($query);
         $resultado->bindParam(":idVeterinario", $idVeterinario, PDO::PARAM_STR);
-        $resultado->bindParam(":nombreVeterinario", $nombreVeterinario, PDO::PARAM_STR);
-        $resultado->bindParam(":apellidoPaterno", $apellidoPaterno, PDO::PARAM_STR);
-        $resultado->bindParam(":codigoVeterinario", $codigoVeterinario, PDO::PARAM_STR);
+        $resultado->bindParam(":nombre_veterinario", $nombreVeterinario, PDO::PARAM_STR);
+        $resultado->bindParam(":apellido_paterno", $apellidoPaterno, PDO::PARAM_STR);
+        $resultado->bindParam(":codigo_veterinario", $codigoVeterinario, PDO::PARAM_STR);
         $resultado->execute();
         self::desconectar();
     } catch (PDOException $Exception) {
