@@ -69,8 +69,8 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <h5 class="card-title">Servicios</h5>
-                        <p class="card-text">Contenido de servicios.</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <p class="card-text">Reporte de servicios anuales.</p>
+                        <a href="..\models\reporteServicios.php" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
