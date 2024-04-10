@@ -126,7 +126,32 @@ class Cliente extends Conexion
         }
     }
 
+
+    public function obtenerDirecciones(){
+        // Query que selecciona todas las direcciones distintas de la tabla de clientes
+        $query = "SELECT DISTINCT direccion FROM Clientes ORDER BY direccion ASC";
+        $direcciones = array();
+        try {
+            self::getConexion();
+            $resultado = self::$cnx->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+    
+            // Recuperar todas las direcciones en un array
+            foreach ($resultado->fetchAll(PDO::FETCH_ASSOC) as $fila) {
+                $direcciones[] = $fila['direccion'];
+            }
+            return $direcciones;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
+            return json_encode($error);
+        }
+    }
+    
+
 }
+
     
 
 ?>

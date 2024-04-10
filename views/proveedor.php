@@ -56,7 +56,7 @@
       </li>
       
       <li class="nav-item">
-          <a class="nav-link disabled text-white" href="../views/ventas.php">Ventas</a>
+          <a class="nav-link disabled text-white" href="../views/Graficos.php">Graficos</a>
       </li>
 
     </ul>

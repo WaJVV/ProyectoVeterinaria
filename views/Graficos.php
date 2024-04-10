@@ -47,7 +47,7 @@
               <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled text-white" href="../views/ventas.php">Ventas</a>
+                <a class="nav-link disabled text-white" href="../views/Graficos.php">Ventas</a>
             </li>
           </ul>
         </div>
@@ -58,9 +58,16 @@
 
 
     <div>
-      <canvas id="myChart"></canvas>
+      <canvas id="grafica"></canvas>
     </div>
 
+  
+
+    <div>
+      <canvas id="grafica2"></canvas>
+    </div>
+
+  
 
   </main>
 
@@ -78,29 +85,11 @@
       </div>
     </div>
   </footer>
+  <script type="text/javascript" src="../views/assets/js/graficaCliente.js"></script>
+  <script type="text/javascript" src="../views/assets/js/graficaVentas.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-  const ctx = document.getElementById('myChart');
+  
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
  
 </body>
 </html>
