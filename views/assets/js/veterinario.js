@@ -1,27 +1,9 @@
-<<<<<<< HEAD
-/*Funcion para limpieza de los formularios*/
-function limpiarForms() {
-    $('#modulos_add').trigger('reset');
-    $('#modulos_update').trigger('reset');
-  }
-  
- 
-  /*Funcion para limpieza de los formularios*/
-function limpiarForms() {
-  $('#usuario_add').trigger('reset');
-  $('#veterinario_update').trigger('reset');
-}
-
-  
-  /*Funcion para cargar el listado en el Datatable*/
-=======
 
 function limpiarForms() {
   $('#usuario_add').trigger('reset');
   $('#veterinario_update').trigger('reset');
   $('#proveedor_add').trigger('reset'); // Agregado para limpiar el formulario de proveedores
 }
->>>>>>> main
   function listarVeterinariosTodos() {
     tabla = $('#tbllistado').dataTable({
       aProcessing: true, //actiavmos el procesamiento de datatables

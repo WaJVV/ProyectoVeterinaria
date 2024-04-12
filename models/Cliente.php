@@ -186,7 +186,7 @@ class Cliente extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $this->setIdCliente($encontrado['idCliente']);
+                $this->setId($encontrado['idCliente']);
                 $this->setIdentificacion($encontrado['identificacion']);
                 $this->setNombre($encontrado['nombre']);
                 $this->setApellidoPaterno($encontrado['apellidoPaterno']);
@@ -207,3 +207,4 @@ class Cliente extends Conexion
 
 }
 ?>
+
