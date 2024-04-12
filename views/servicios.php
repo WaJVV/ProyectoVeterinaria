@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
-    <link href="../css/plantilla.css" rel="stylesheet"><!-- Enlaza el archivo CSS externo -->
-    <link href="assets/css/plantilla.css" rel="stylesheet"> <!-- Enlaza el archivo CSS externo -->
+    <link href="../css/plantilla.css" rel="stylesheet">
+    <link href="assets/css/plantilla.css" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">        
     <link rel="stylesheet" href="plugins/toastr/toastr.css">
   </head>
   <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand text-white" href="#">Dr. Pet</a> <!-- Agrega la clase 'text-white' para hacer que el texto sea blanco -->
+  <a class="navbar-brand text-white" href="..\views\index.php">Dr. Pet</a> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
-        <a class="nav-link text-white" href="..\views\index.php"> Inicio <span class="sr-only">(current)</span></a>
-      </li>  
       <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\nuestraClinica.php">Nuestra Clínica <span class="sr-only">(current)</span></a>
       </li>
@@ -34,7 +31,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>

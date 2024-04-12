@@ -59,6 +59,7 @@ aside {/* formato aside*/
     height: 200px; /* Altura deseada */
     
 }
+
 nav {
     color: white;
     padding: 10px;
@@ -87,6 +88,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: lightgray;
 }
+
 /*fondo de la pantalla*/
 .content {
     margin: 20px;

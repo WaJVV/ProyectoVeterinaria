@@ -8,6 +8,7 @@ switch ($_GET["op"]) {
         $data = array();
         foreach ($pacientes as $reg) {
             $data[] = array(
+<<<<<<< HEAD
                 "idMascota" => $reg->getIdMascota(),
                 "nombre" => $reg->getNombre(),
                 "raza" => $reg->getRaza(),
@@ -17,6 +18,17 @@ switch ($_GET["op"]) {
                 "acciones" => '<button class="btn btn-warning" id="modificarPaciente">Modificar</button> ' .
                         '<button class="btn btn-danger" onclick="desactivar(\'' . $reg->getIdMascota() . '\')">Desactivar</button>',
             );
+=======
+                "0" => $reg->getIdMascota(),
+                "1" => $reg->getNombre(),
+                "2" => $reg->getRaza(),
+                "3" => $reg->getPeso(),
+                "4" => $reg->getNacimientoMascota(),
+                "5" => $reg->getIdCliente(),
+                "6" => ""
+
+                );
+>>>>>>> main
         }
         $resultados = array(
             "sEcho" => 1,
@@ -26,17 +38,26 @@ switch ($_GET["op"]) {
         );
         echo json_encode($resultados);
         break;
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     case 'insertar':
         $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
         $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
         $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
+<<<<<<< HEAD
         $nacimiento = isset($_POST["nacimiento"]) ? trim($_POST["nacimiento"]) : "";
+=======
+        $nacimientoMascota = isset($_POST["nacimientoMascota"]) ? trim($_POST["nacimientoMascota"]) : "";
+>>>>>>> main
         $idCliente = isset($_POST["idCliente"]) ? trim($_POST["idCliente"]) : "";
         
         $paciente = new Paciente();
         $paciente->setNombre($nombre);
         $paciente->setRaza($raza);
         $paciente->setPeso($peso);
+<<<<<<< HEAD
         $paciente->setNacimientoMascota($nacimiento);
         $paciente->setIdCliente($idCliente);
         
@@ -98,6 +119,20 @@ switch ($_GET["op"]) {
             echo 1;
         } else {
             echo 0;
+=======
+        $paciente->setNacimientoMascota($nacimientoMascota);
+        $paciente->setIdCliente($idCliente);
+        
+        $paciente->guardarEnDb();
+        if ($paciente->verificarExistenciaDb()) {
+            //if(enviarCorreo($email,$clave,$nombre)){
+            echo 1; 
+            //} else {
+            //  echo 4; // 
+            //}
+        } else {
+            echo 3; // 
+>>>>>>> main
         }
         break;
 }

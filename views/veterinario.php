@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinario</title>
-    <link rel="stylesheet" href="/views/assets/css/plantilla.css">
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">        
     <link rel="stylesheet" href="plugins/toastr/toastr.css">
-   
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand text-white" href="#">Dr. Pet</a> <!-- Agrega la clase 'text-white' para hacer que el texto sea blanco -->
+  <a class="navbar-brand text-white" href="..\views\index.php">Dr. Pet</a> <!-- Agrega la clase 'text-white' para hacer que el texto sea blanco -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
-        <a class="nav-link text-white" href="..\views\index.php"> Inicio <span class="sr-only">(current)</span></a>
-      </li>  
       <li class="nav-item active">
         <a class="nav-link text-white" href="..\views\nuestraClinica.php">Nuestra Clínica <span class="sr-only">(current)</span></a>
       </li>
@@ -34,7 +29,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
@@ -111,7 +106,60 @@
         </div>
     </div>
 
+<!-- Formulario de modificacion de xxx -->
+<div class="col-md-12" id="formulario_update">
+            <div class="card card-dark">
+                <div class="card-header">
+                    <h3 class="card-title">Modificar un Usario</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md 10">
+                            <form name="usuario_update" id="usuario_update" method="POST">
+                                <input type="hidden" class="form-control" id="EId" name="id">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="text" class="form-control" id="Eemail"
+                                                name="email" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" class="form-control" id="Enombre"
+                                                name="nombre" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="telefono">Teléfono</label>
+                                            <input type="text" class="form-control" id="Etelefono"
+                                                name="telefono" required>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <input type="submit" class="form-control btn btn-warning"
+                                            value="Modificar">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="button" class="form-control btn btn-info"
+                                            value="Cancelar" onclick="cancelarForm()">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
     <div class="col-md-12">
     <div class="card card-dark">
         <div class="card-header">

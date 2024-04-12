@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrPets</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">        
     <link rel="stylesheet" href="plugins/toastr/toastr.css">
@@ -30,7 +29,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
+        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
@@ -38,13 +37,22 @@
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\proveedor.php">Proveedor</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="..\views\cliente.php">Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link disabled text-white" href="..\views\productoInventario.php">Producto Inventario</a>
+      </li>
 
       <li class="nav-item">
           <a class="nav-link disabled text-white" href="../views/Graficos.php">Ventas</a>
       </li>
-
     </ul>
   </div>
+
 </nav>
 </header>
 <body>
@@ -107,6 +115,23 @@
   </div>
 </div>
 <br></br>
+
+<!--Comentarios-->
+<h2>Caja de Comentarios</h2>
+<br>
+<p class="lead">Introduce tu comentario de nuestra página y servicios brindados.</p>
+<br>
+<label for="nombreC" class="form-label">Nombre:</label>
+<input class="form-control" name="nombreC" type="text" id="nombreC" placeholder="Escribe tu nombre aquí"></input>
+<br>
+<label for="comentario" class="form-label">Comentario:</label>
+<textarea class="form-control" name="comentario" cols="30" rows="5" type="text" id="comentario"
+placeholder="Escribe tu comentario aquí...."></textarea>
+<br>
+<input class="btn btn-primary" type="submit" value="Enviar">
+<br>
+<br>
+<br>
 </body>
 <footer class="bg-dark">
    

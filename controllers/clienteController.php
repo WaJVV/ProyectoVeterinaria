@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 // Ensure to use the correct path to Cliente.php file
+=======
+// uso ocrrecto de Cliente.php file
+>>>>>>> main
 require_once '../models/Cliente.php';
 
 switch ($_GET["op"]) {
@@ -16,7 +20,13 @@ switch ($_GET["op"]) {
                 "4" => $reg->getApellidoMaterno(),
                 "5" => $reg->getNacimientoCliente(),
                 "6" => $reg->getDireccion(),
+<<<<<<< HEAD
                 "7" => $reg->getTelefonoCelular()
+=======
+                "7" => $reg->getTelefonoCelular(),
+                "8" => ""
+
+>>>>>>> main
             );
         }
         $resultados = array(
@@ -33,16 +43,24 @@ switch ($_GET["op"]) {
         $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
         $apellidoPaterno = isset($_POST["apellidoPaterno"]) ? trim($_POST["apellidoPaterno"]) : "";
         $apellidoMaterno = isset($_POST["apellidoMaterno"]) ? trim($_POST["apellidoMaterno"]) : "";
+<<<<<<< HEAD
         $nacimiento = isset($_POST["nacimiento"]) ? trim($_POST["nacimiento"]) : "";
         $direccion = isset($_POST["direccion"]) ? trim($_POST["direccion"]) : "";
         $telefonoCelular = isset($_POST["telefonoCelular"]) ? trim($_POST["telefonoCelular"]) : "";
 
         // Create an instance of the Cliente class
+=======
+        $nacimientoCliente = isset($_POST["nacimientoCliente"]) ? trim($_POST["nacimientoCliente"]) : "";
+        $direccion = isset($_POST["direccion"]) ? trim($_POST["direccion"]) : "";
+        $telefonoCelular = isset($_POST["telefonoCelular"]) ? trim($_POST["telefonoCelular"]) : "";
+
+>>>>>>> main
         $cliente = new Cliente();
         $cliente->setIdentificacion($identificacion);
         $cliente->setNombre($nombre);
         $cliente->setApellidoPaterno($apellidoPaterno);
         $cliente->setApellidoMaterno($apellidoMaterno);
+<<<<<<< HEAD
         $cliente->setNacimientoCliente($nacimiento);
         $cliente->setDireccion($direccion);
         $cliente->setTelefonoCelular($telefonoCelular);
@@ -57,6 +75,21 @@ switch ($_GET["op"]) {
             //}
         } else {
             echo 3; // Registration failed
+=======
+        $cliente->setNacimientoCliente($nacimientoCliente);
+        $cliente->setDireccion($direccion);
+        $cliente->setTelefonoCelular($telefonoCelular);
+
+        $cliente->guardarEnDb();
+        if ($cliente->verificarExistenciaDb()) {
+            //if(enviarCorreo($email,$clave,$nombre)){
+            echo 1; 
+            //} else {
+            //  echo 4; // 
+            //}
+        } else {
+            echo 3; // 
+>>>>>>> main
         }
         break;
 }
