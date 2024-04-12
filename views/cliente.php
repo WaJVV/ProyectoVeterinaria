@@ -43,6 +43,9 @@
       <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link disabled text-white" href="../views/Graficos.php">Ventas</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -46,6 +46,10 @@
     <li class="nav-item">
         <a class="nav-link disabled text-white" href="..\views\productoInventario.php">Producto Inventario</a>
       </li>
+
+      <li class="nav-item">
+          <a class="nav-link disabled text-white" href="../views/Graficos.php">Ventas</a>
+      </li>
     </ul>
   </div>
 
