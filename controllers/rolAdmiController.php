@@ -20,6 +20,7 @@ if(isset($_POST['cerrarSesion'])) {
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="stylesheet" href="../css/rolAdmi.css">
 </head>
 
 <body>
@@ -81,25 +82,25 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
         <h2 class="titulo">Opciones de Administrador:</h2>
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-2">
-                <button class="btn btn-primary btn-block" onclick="location.href='../models/agregarUsuario.php'">Agregar
+                <button class="btn btn-info btn-block" onclick="location.href='../models/agregarUsuario.php'">Agregar
                     Usuario</button>
             </div>
             <div class="col-sm-6 col-md-2">
-                <button class="btn btn-primary btn-block" onclick="location.href='../models/rolAdmi.php'">Ver
+                <button class="btn btn-info btn-block" onclick="location.href='../models/rolAdmi.php'">Ver
                     Usuarios</button>
             </div>
             <div class="col-sm-6 col-md-2">
-                <button class="btn btn-primary btn-block"
+                <button class="btn btn-info btn-block"
                     onclick="location.href='../models/modificarUsuario.php'">Modificar
                     Datos</button>
             </div>
             <div class="col-sm-6 col-md-2">
-                <button class="btn btn-primary btn-block"
-                    onclick="location.href='../models/eliminarUsuario.php'">Eliminar
+                <button class="btn btn-info btn-block" onclick="location.href='../models/eliminarUsuario.php'">Eliminar
                     Usuario</button>
             </div>
         </div>
     </div>
+
 
     <div class="contenido">
         <div class="row">
@@ -138,7 +139,18 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                             </ul>
                                         </li>
                                     </ul>
+                                    <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>
+                                    <script>
+                                    function atras() {
+                                        window.history.back();
+                                    }
+                                    </script>
                                 </div>
+                                <!--cerrar sesión -->
+                                <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" class="mt-3">
+                                    <button class="btn btn-danger" type="submit" name="cerrarSesion">Cerrar
+                                        Sesión</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -211,17 +223,6 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
             </article>
         </div>
 
-        <div class="container-fluid">
-            <div class=back-button>
-                <button class="btn btn-secondary" onclick="atras()">Atrás</button>
-                <script>
-                function atras() {
-                    window.location.href = '../views/index.php';
-                }
-                </script>
-            </div>
-        </div>
-
         <?php
 // Verificar si se enviaron los datos del formulario de Agregar usuario
 if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
@@ -273,12 +274,6 @@ if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email'
     $conn = null;
 }
 ?>
-
-        <!--cerrar sesión -->
-        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-            <button class="btn btn-danger" type="submit" name="cerrarSesion">Cerrar Sesión</button>
-        </form>
-
 
         <footer class="bg-dark">
             <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">

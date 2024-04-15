@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
-
+    <link rel="stylesheet" href="../css/reportes.css">
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -53,60 +53,61 @@
 <body>
 
 <div class="container mt-5">
-    <article class="Reportesvarios">
-        <h1 class="text-center">Reportería</h1>
-        <div class="row justify-content-around">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Ventas</h5>
-                        <p class="card-text">Contenido de ventas.</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+        <article class="Reportesvarios">
+            <h1 class="text-center">Reportería</h1>
+            <div class="row justify-content-around">
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\ventas.jpg" alt="ventas">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ventas</h5>
+                            <p class="card-text">Historial de ventas realizadas.</p>
+                            <a href="..\models\reporteVentas.php" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\servicios.jpg" alt="servicios">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Servicios</h5>
+                            <p class="card-text">Reporte de servicios anuales.</p>
+                            <a href="..\models\reporteServicios.php" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\pacientes.jpg" alt="pacientes">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Pacientes</h5>
+                            <p class="card-text">Reportes de pacientes atendidos.</p>
+                            <a href="..\models\reporteCitas.php" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\proveedores.jpg" alt="proveedores">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Proveedores</h5>
+                            <p class="card-text">Proveedores por producto de venta.</p>
+                            <a href="..\models\reporteProveedores.php" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\cumpleaneros.jpg" alt="cumples">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cumpleañeros</h5>
+                            <p class="card-text">Listado de nuestros cumpleaños del mes.</p>
+                            <a href="..\models\reportecumple.php" class="btn btn-primary">Ver más</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Servicios</h5>
-                        <p class="card-text">Reporte de servicios anuales.</p>
-                        <a href="..\models\reporteServicios.php" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Pacientes</h5>
-                        <p class="card-text">Reportes de pacientes atendidos.</p>
-                        <a href="..\models\reporteCitas.php" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Proveedores</h5>
-                        <p class="card-text">Contenido de proveedores.</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Cumpleañeros</h5>
-                        <p class="card-text">Listado de nuestros cumpleaños del mes.</p>
-                        <a href="..\models\reportecumple.php" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-
-    <div class="container">
-        <h1 class= "text-center">Gráficos</h1>
+        </article>
     </div>
 
     <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="../css/Admin.css"><!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" href="../css/Admin.css"><!-- Enlaza el archivo CSS externo -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/toastr/toastr.css">
-
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -84,7 +84,8 @@
 
     <section class="login-section">
         <div class="container">
-            <div class="card">
+            <div class="card bg-transparent">
+                <!-- Agregar la clase bg-transparent -->
                 <div class="card-body login-card-body">
                     <h3 class="login-box-msg text-center mb-5">Inicio de Sesión</h3>
                     <form action="../controllers/loginController.php" method="post">
@@ -107,21 +108,28 @@
                             </div>
                         </div>
                         <div class="icheck-primary mb-4">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Recordarme</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
-                </form>
-                <p class="mb-4">
-                    <a href="forgot-password.html">Olvidé mi contraseña</a>
-                </p>
-                <p class="mb-5">
-                    <a href="register.html" class="text-center">Crear cuenta</a>
-                </p>
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Recordarme</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
+                    </form>
+                    <p class="mb-4">
+                        <a href="forgot-password.html">Olvidé mi contraseña</a>
+                    </p>
+                    <p class="mb-5">
+                        <a href="register.html" class="text-center">Crear cuenta</a>
+                    </p>
+                    <button class="btn btn-secondary back-button custom-color" onclick="atras()">Atrás</button>
+                    <script>
+                    function atras() {
+                        window.history.back();
+                    }
+                    </script>
+                </div>
             </div>
+
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="bg-dark">
 

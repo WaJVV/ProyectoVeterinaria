@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
     <link href="toastr.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="stylesheet" href="../css/agenda.css">
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -59,8 +60,9 @@
             </div>
         </nav>
     </header>
+    <div>
     <h1> Calendario de Actividades </h1>
-
+</div>
     <div class="botonesAgenda">
         <button id="mostrarFormularioBtn" class="btn btn-primary">Agregar Cita</button>
         <button id="verCitasBtn" class="btn btn-warning">Ver Citas</button>
@@ -91,9 +93,9 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="idMascota" class="col-sm-2 col-form-label">ID de Mascota:</label>
+                <label for="nombreMascota" class="col-sm-2 col-form-label">Nombre de la mascota:</label>
                     <div class="col-auto">
-                        <input type="text" class="form-control" id="idMascota" name="idMascota" required>
+                    <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" required>
                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                     </div>
                 </div>
@@ -145,34 +147,60 @@
     });
     </script>
 
-    <script>
-    //conexión al controlador para guardar las citas y actualizar la interfaz gráfica.
-    document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
-        document.getElementById('formulario').style.display = 'block';
-    });
+<script>
+//conexión al controlador para guardar las citas y actualizar la interfaz gráfica.
+document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
+    document.getElementById('formulario').style.display = 'block';
+});
 
-    document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
-        var formData = new FormData(this);
-        fetch('../controllers/agendaController.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('resultado').innerHTML = data;
-                // Actualizar el calendario con la nueva cita
-                calendar.refetchEvents();
-                // Limpiar el formulario después de guardar la cita
-                document.getElementById('agregarCitaForm').reset();
-                // Ocultar el formulario
-                document.getElementById('formulario').style.display = 'none';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    });
-    </script>
+document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+    var formData = new FormData(this);
+    fetch('../controllers/agendaController.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('resultado').innerHTML = data;
+            // Actualizar el calendario con la nueva cita
+            calendar.refetchEvents();
+            // Limpiar el formulario después de guardar la cita
+            document.getElementById('agregarCitaForm').reset();
+            // Ocultar el formulario
+            document.getElementById('formulario').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
+document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+    var formData = new FormData(this);
+    fetch('../controllers/agendaController.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Mostrar el modal con el mensaje y el ID de la cita
+            $('#modalIdCita').modal('show');
+            document.getElementById('idCita').innerText = data.idCita;
+            
+            // Actualizar el calendario con la nueva cita
+            calendar.refetchEvents();
+            // Limpiar el formulario después de guardar la cita
+            document.getElementById('agregarCitaForm').reset();
+            // Ocultar el formulario
+            document.getElementById('formulario').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
+</script>
 
     <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -249,7 +277,15 @@
                 citasDiv.innerHTML = '';
                 data.forEach(cita => {
                     citasDiv.innerHTML +=
-                        `<li class="list-group-item">Fecha: ${cita.start} - Motivo: ${cita.title}</li>`;
+    `<li class="list-group-item">
+        <div class="row">
+            <div class="col"><strong>Fecha:</strong> ${cita.start}</div>
+            <div class="col"><strong>Motivo:</strong> ${cita.title}</div>
+            <div class="col"><strong>Nombre:</strong> ${cita.cliente}</div>
+            <div class="col"><strong>Mascota:</strong> ${cita.mascota}</div>
+            <div class="col"><strong>IdCita:</strong> ${cita.id}</div>
+        </div>
+    </li>`;
                 });
             })
             .catch(error => console.error('Error al obtener las citas:', error));
@@ -259,7 +295,8 @@
         // Ocultar el contenedor de citas
         document.getElementById('citasContainer').style.display = 'none';
     });
-    </script>
+</script>
+
 
 
 

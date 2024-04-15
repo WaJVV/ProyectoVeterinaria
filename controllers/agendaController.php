@@ -1,6 +1,5 @@
 <?php
 
-
 // Función para eliminar una cita
 function eliminarCita($idCita) {
     // Conectar a la base de datos
@@ -36,9 +35,8 @@ if (isset($_POST["idCita"])) {
 function agregarCita() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Procesar el formulario
-        $nombreCliente = $_POST["nombreCliente"];
         $identificacionCliente = $_POST["identificacionCliente"];
-        $idMascota = $_POST["idMascota"];
+        $nombreMascota = $_POST["nombreMascota"];
         $tipoCita = $_POST["tipoCita"];
         $fecha = $_POST["fecha"];
         $hora = $_POST["hora"];
@@ -55,36 +53,29 @@ function agregarCita() {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Validar que el idMascota exista en la tabla mascotas
-        $sqlValidacionMascota = "SELECT COUNT(*) as count FROM mascotas WHERE idMascota = $idMascota";
-        $resultMascota = $conn->query($sqlValidacionMascota);
-        $rowMascota = $resultMascota->fetch_assoc();
-        if ($rowMascota['count'] == 0) {
-            echo "El idMascota ingresado no existe.";
-            return;
-        }
-
-        $idVeterinario = $_POST["idVeterinario"];
-        // Validar que el idVeterinario exista en la tabla veterinario
-        $sqlValidacionVeterinario = "SELECT COUNT(*) as count FROM veterinario WHERE idVeterinario = $idVeterinario";
-        $resultVeterinario = $conn->query($sqlValidacionVeterinario);
-        $rowVeterinario = $resultVeterinario->fetch_assoc();
-        if ($rowVeterinario['count'] == 0) {
-            echo "El idVeterinario ingresado no existe.";
-            return;
-        }
-        // Validar que el idCliente exista en la tabla clientes
-        $sqlValidacionCliente = "SELECT COUNT(*) as count FROM clientes WHERE idCliente = '$identificacionCliente'";
-        $resultCliente = $conn->query($sqlValidacionCliente);
-        $rowCliente = $resultCliente->fetch_assoc();
-        if ($rowCliente['count'] == 0) {
+        // Obtener el idCliente de la tabla clientes
+        $sqlIdCliente = "SELECT idCliente FROM clientes WHERE identificacion = '$identificacionCliente'";
+        $resultIdCliente = $conn->query($sqlIdCliente);
+        if ($resultIdCliente->num_rows == 0) {
             echo "El idCliente ingresado no existe.";
             return;
         }
+        $rowIdCliente = $resultIdCliente->fetch_assoc();
+        $idCliente = $rowIdCliente["idCliente"];
+
+        // Obtener el idMascota de la tabla mascotas
+        $sqlIdMascota = "SELECT idMascota FROM mascotas WHERE idCliente = '$idCliente' AND nombre = '$nombreMascota'";
+        $resultIdMascota = $conn->query($sqlIdMascota);
+        if ($resultIdMascota->num_rows == 0) {
+            echo "La mascota ingresada no existe para el cliente indicado.";
+            return;
+        }
+        $rowIdMascota = $resultIdMascota->fetch_assoc();
+        $idMascota = $rowIdMascota["idMascota"];
 
         // Insertar la cita en la base de datos
-        $sql = "INSERT INTO citas (idMascota, idCliente, fecha_visita, motivo, idVeterinario)
-                VALUES ('$idMascota', '$identificacionCliente', '$fecha $hora', '$tipoCita', '$idVeterinario')";
+        $sql = "INSERT INTO citas (idCliente, idMascota, fecha_visita, motivo, idVeterinario)
+                VALUES ('$idCliente', '$idMascota', '$fecha $hora', '$tipoCita', '$idVeterinario')";
         if ($conn->query($sql) === TRUE) {
             echo "Cita agregada correctamente";
         } else {
@@ -112,8 +103,11 @@ function obtenerCitasJSON() {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Consulta SQL para obtener las citas
-    $sql = "SELECT * FROM citas";
+    // Consulta SQL para obtener las citas con el nombre del cliente y la mascota
+    $sql = "SELECT citas.idCitas, citas.motivo, citas.fecha_visita, clientes.nombre AS nombreCliente, mascotas.nombre AS nombreMascota
+            FROM citas
+            INNER JOIN clientes ON citas.idCliente = clientes.idCliente
+            INNER JOIN mascotas ON citas.idMascota = mascotas.idMascota";
     $result = $conn->query($sql);
 
     // Array para almacenar los eventos
@@ -124,8 +118,10 @@ function obtenerCitasJSON() {
         while($row = $result->fetch_assoc()) {
             // Crear un evento para cada cita
             $event = array(
-                'id' => $row['idCitas'],
+                'id' => $row['idCitas'], // Agregar el ID de la cita
                 'title' => $row['motivo'],
+                'cliente' =>$row['nombreCliente'],
+                'mascota' =>$row['nombreMascota'],
                 'start' => $row['fecha_visita']
             );
             array_push($events, $event);
@@ -137,7 +133,6 @@ function obtenerCitasJSON() {
 
     $conn->close();
 
-    
     return $eventsJSON;
 }
 
@@ -146,7 +141,6 @@ $eventsJSON = obtenerCitasJSON();
 
 // Mostrar el JSON en la página para que pueda ser utilizado por el calendario
 echo $eventsJSON;
-
 
 ?>
 

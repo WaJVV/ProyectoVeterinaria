@@ -50,3 +50,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+.custom-color {
+    background-color: #02879f;
+    border-color: #02879f;
+}

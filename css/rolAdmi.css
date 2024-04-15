@@ -30,3 +30,16 @@ body {
 .card {
     opacity: 0.9; /* Opacidad del 90% */
 }
+
+.opciones-administrador {
+    margin-top: 20px;
+    text-align: center;
+    border-color: #02879f; /* Nuevo color del borde al pasar el mouse */
+}
+/* Estilo para el botón "Entrar" al pasar el mouse sobre él */
+.btn-secondary.back-button {
+    background-color: #02879f; /* Nuevo color de fondo al pasar el mouse */
+    border-color: #02879f; /* Nuevo color del borde al pasar el mouse */
+    color: #fff; /* Nuevo color del texto al pasar el mouse */
+}
+
