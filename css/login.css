@@ -1,0 +1,52 @@
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh; /* Esto hace que el contenedor ocupe toda la altura de la pantalla */
+}
+
+.login-card-body {
+    padding: 40px; /* Ajusta el padding del card-body */
+    margin: 0 auto; /* Centra el card en el contenedor */
+    max-width: 400px; /* Establece un ancho máximo para el card */
+    width: 100%; /* Ajusta el ancho del card al 100% */
+    background-color: rgba(255, 255, 255, 0.82); /* Color blanco con 70% de opacidad */
+    /* Otros estilos de la caja... */
+}
+
+/* Estilo para el encabezado "Inicio de Sesión" */
+.login-box-msg {
+    color: #02879f; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para el botón con las clases btn-primary, btn-block, y mb-4 */
+.btn.btn-primary.btn-block.mb-4 {
+    background-color: #02879f; /* Color de fondo del botón */
+    border-color: #02879f; /* Color del borde del botón */
+    color: #fff; /* Color del texto del botón */
+}
+
+
+/* Estilo para el botón "Entrar" al pasar el mouse sobre él */
+.btn.btn-primary.btn-block.mb-4 {
+    background-color: #02879f; /* Nuevo color de fondo al pasar el mouse */
+    border-color: #02879f; /* Nuevo color del borde al pasar el mouse */
+    color: #fff; /* Nuevo color del texto al pasar el mouse */
+}
+
+/* Estilo para el contenedor del botón "Atrás" */
+.container.text-right {
+    bottom: 100px; /* Distancia desde la parte inferior */
+    right: 0px; /* Distancia desde el borde derecho */
+    z-index: 999; /* Colocar por encima de otros elementos */
+}
+
+body {
+    background-image: url('../img/login.jpg'); /* Ruta corregida con barras normales */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
