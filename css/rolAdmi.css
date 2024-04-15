@@ -1,0 +1,32 @@
+body {
+    background-image: url('../img/salchicha.jpg'); /* Ruta corregida con barras normales */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%; /* Ajustar el ancho máximo al 100% */
+    margin: 0 auto; 
+    padding: 0px; /* Agregar un espacio de relleno alrededor del contenido */
+}
+.infoImportante {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 0 0 calc(10% - 20px); /* Tamaño de cada card (50% del contenedor menos el espacio entre ellos) */
+    margin-bottom: 20px; /* Espacio entre los cards */
+}
+
+.card-header {
+    background-color: #02879f; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    font-size: 1.5em; /* Tamaño de fuente 1.5 veces el tamaño normal */
+    font-weight: bold; /* Fuente en negrita */
+    text-align: center; /* Texto centrado */
+    padding: 10px; /* Espaciado interno de 10px */
+}
+
+.card {
+    opacity: 0.9; /* Opacidad del 90% */
+}

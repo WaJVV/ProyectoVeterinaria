@@ -1,0 +1,13 @@
+
+body {
+    background-image: url('../img/reportes.jpg'); /* Ruta corregida con barras normales */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%; /* Ajustar el ancho máximo al 100% */
+    margin: 0 auto; 
+    padding: 0px; /* Agregar un espacio de relleno alrededor del contenido */
+}
+.card .card-img-top {
+    opacity: 0.9; /* Cambiar la opacidad al valor deseado */
+}
