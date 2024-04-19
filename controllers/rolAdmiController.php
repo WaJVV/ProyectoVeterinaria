@@ -53,12 +53,6 @@ if(isset($_POST['cerrarSesion'])) {
                     <li class="nav-item">
                         <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled text-white" href="..\views\proveedor.php">Proveedor</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -136,6 +130,24 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                             <button class="opcion-desplegable btn btn-link">Informes</button>
                                             <ul class="submenu">
                                                 <li><a href="..\models\reportes.php">Reportes</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <button class="opcion-desplegable btn btn-link">Ventas</button>
+                                            <ul class="submenu">
+                                                <li><a href="..\views\venta.php">Lista</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <button class="opcion-desplegable btn btn-link">Proveedor</button>
+                                            <ul class="submenu">
+                                                <li><a href="..\views\proveedor.php">Lista</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <button class="opcion-desplegable btn btn-link">Graficos</button>
+                                            <ul class="submenu">
+                                                <li><a href="../views/Graficos.php">Vista</a></li>
                                             </ul>
                                         </li>
                                     </ul>
