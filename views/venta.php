@@ -110,7 +110,7 @@
             </figure>
             <div class="info-product">
                 <div>
-                  <h5>Virbac Pronefra para Problemas Renales en Perros y GatosVirbac Pronefra para Problemas Renales en Perros y Gatos</h5>
+                  <h5>Virbac Pronefra para Problemas Renales en Perros y Gatos</h5>
                   <p class="price">₡14500</p>
                   <button class="btn btn-success" id="btn_guardado5">Agregar producto</button>
                 </div>
@@ -141,7 +141,7 @@
             </figure>
             <div class="info-product">
                 <div>
-                  <h5>Pro Plan Veterinary Diets Comida Húmeda EN Gastrointestinal Mousse</h5>
+                  <h5>Pro Plan Veterinary Diets Comida Húmeda Enlatada Gastrointestinal Mousse</h5>
                   <p class="price">₡26500</p>
                   <button class="btn btn-success" id="btn_guardado7">Agregar producto</button>
                 </div>
@@ -274,7 +274,39 @@
           </div>
 
           <br><br>
-          <h4>Servicios</h4>
+          <h2>Servicios</h2>
+          <br><br>
+          
+          <label for="servicios">Selecciona un servicio:</label>
+          <select id="servicios" name="servicios">
+            <option value="1">Cirugía</option>
+            <option value="2">Consulta General</option>
+            <option value="3">Hospitalizaciones</option>
+            <option value="4">Consultas especializadas</option>
+            <option value="5">Hotel y Spa</option>
+            <option value="6">Fisioterapia</option>
+            <option value="7">Control de salud</option>
+            <option value="8">Consulta exóticos y silvestres</option>
+            <option value="9">Grooming</option>
+          </select>
+          <button class="btn btn-success" id="btn_guardado17">Agregar producto</button>
+
+<table>
+  <tr>
+    <td colspan="5" class="textright">SUBTOTAL Q.</td>
+    <td class="textright"><?php echo '7000'; ?></td>
+  </tr>
+  <tr>
+    <td colspan="5" class="textright">IVA (13%)</td>
+    <td class="textright"><?php echo '500'; ?></td>
+  </tr>
+  <tr>
+    <td colspan="5" class="textright">TOTAL Q.</td>
+    <td class="textright"><?php echo '7500'; ?></td>
+  </tr>
+</table>
+
+
           <br><br>
 
         <div>
