@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">        
     <link rel="stylesheet" href="plugins/toastr/toastr.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -51,10 +53,7 @@
                 <div>
                   <h5>Beaphar Pasta Multi-Vitaminas Perro</h5>
                   <p class="price">₡5000</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                    <button class="btn btn-success" id="btn_guardado">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -66,10 +65,7 @@
                 <div>
                   <h5>Beaphar Pasta Dentífrica con Sabor a Carne para Perro y Gato</h5>
                   <p class="price">₡3500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="2">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                    <button class="btn btn-success" id="btn_guardado1">Agregar producto</button>
                 </div>
             </div>
           </div><div class="item">
@@ -80,10 +76,7 @@
                 <div>
                   <h5>VetPlus Coatex Complemento Alimenticio para Pelo y Piel en Perros y Gatos</h5>
                   <p class="price">₡16500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="3">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado2">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -95,10 +88,7 @@
                 <div>
                   <h5>Arquivet Aceite de Salmón Escocés para Perros y Gatos</h5>
                   <p class="price">₡9500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado3">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -110,10 +100,7 @@
                 <div>
                   <h5>Vétoquinol Ipakitine para Función Renal</h5>
                   <p class="price">₡11300</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado4">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -125,10 +112,7 @@
                 <div>
                   <h5>Virbac Pronefra para Problemas Renales en Perros y GatosVirbac Pronefra para Problemas Renales en Perros y Gatos</h5>
                   <p class="price">₡14500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado5">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -147,10 +131,7 @@
                 <div>
                   <h5>Royal Canin Comida Húmeda Mini Puppy para Perro</h5>
                   <p class="price">₡700</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado6">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -162,10 +143,7 @@
                 <div>
                   <h5>Pro Plan Veterinary Diets Comida Húmeda EN Gastrointestinal Mousse</h5>
                   <p class="price">₡26500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado7">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -177,10 +155,7 @@
                 <div>
                   <h5>Royal Canin Maxi Adult Pienso para Perro Adulto de Razas Tamaño Grande</h5>
                   <p class="price">₡43500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado8">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -192,10 +167,7 @@
                 <div>
                   <h5>Pack 24 Gourmet Comida Húmeda Gold Tartelette de Pollo y Zanahoria para Gatos</h5>
                   <p class="price">₡14000</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado9">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -207,10 +179,7 @@
                 <div>
                   <h5>Grature Pienso Anti Bolas de Pelo para Gatos Adultos</h5>
                   <p class="price">₡5000</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado10">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -222,10 +191,7 @@
                 <div>
                   <h5>Royal Canin Maine Coon Pienso para Gato Adulto de Raza </h5>
                   <p class="price">₡25500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado11">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -242,10 +208,7 @@
                 <div>
                   <h5>Musqui Pelota de Tenis Amarilla para Perros</h5>
                   <p class="price">₡1500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado12">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -257,10 +220,7 @@
                 <div>
                   <h5>Trixie Cocodrilo Látex con Sonido</h5>
                   <p class="price">₡6000</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado13">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -272,10 +232,7 @@
                 <div>
                   <h5>Nayeco Nudo con 2 Pelotas de Tennis Bicolor</h5>
                   <p class="price">₡3500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado14">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -287,10 +244,7 @@
                 <div>
                   <h5>Catit Senses Alfombrilla de Juegos</h5>
                   <p class="price">₡14700</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado15">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -302,10 +256,7 @@
                 <div>
                   <h5>Trixie Guante De Juego Con Juguetes, Marrón</h5>
                   <p class="price">₡4500</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado16">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -317,10 +268,7 @@
                 <div>
                   <h5>Trixie Tortuga de Peluche con Sonido</h5>
                   <p class="price">₡8000</p>
-                  <form action="#" method="post">
-                    <input type="hidden" name="id" value="1">
-                    <button type="submit" class="add-to-cart">Agregar producto</button>
-                  </form>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar producto</button>
                 </div>
             </div>
           </div>
@@ -333,7 +281,7 @@
     </div>
 </div>
 <script src="assets/js/productos.js"></script>
-
+<script src="assets/js/btn.js"></script>
 </body>
 <footer class="bg-dark">
 
