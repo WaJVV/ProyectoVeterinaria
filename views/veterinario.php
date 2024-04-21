@@ -53,7 +53,7 @@
         <div class="col-md-12" id="formulario_add">
             <div class="card card-dark">
                 <div class="card-header">
-                    <h3 class="card-title">Agregar un Veterinario</h3>
+                    <h3 class="card-title">Agregar Veterinario</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
