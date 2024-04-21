@@ -160,3 +160,12 @@ $('#btn_guardado17').click(function(){
       });
 });
 
+$('#btn_guardado18').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Producto agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
