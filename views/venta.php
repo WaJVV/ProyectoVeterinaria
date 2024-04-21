@@ -41,8 +41,10 @@
 </header>
 <body>
 <div class="card-header text-center">
-    <h3 class="card-title">Ventas</h3>
+    <h1 class="card-title">Ventas</h1>
     <br><br>
+    <h2>Productos</h2>
+
       <h4>Cuidado de la mascota</h4>
         <div class="container-items">
           <div class="item">
@@ -52,6 +54,14 @@
             <div class="info-product">
                 <div>
                   <h5>Beaphar Pasta Multi-Vitaminas Perro</h5>
+                  <div class="table-container">
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController.php"?>
+                  </table>
+                  </div>
                   <p class="price">₡5000</p>
                     <button class="btn btn-success" id="btn_guardado">Agregar producto</button>
                 </div>
@@ -64,6 +74,12 @@
             <div class="info-product">
                 <div>
                   <h5>Beaphar Pasta Dentífrica con Sabor a Carne para Perro y Gato</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController2.php"?>
+                  </table>                  
                   <p class="price">₡3500</p>
                     <button class="btn btn-success" id="btn_guardado1">Agregar producto</button>
                 </div>
@@ -75,6 +91,12 @@
             <div class="info-product">
                 <div>
                   <h5>VetPlus Coatex Complemento Alimenticio para Pelo y Piel en Perros y Gatos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController3.php"?>
+                  </table>
                   <p class="price">₡16500</p>
                   <button class="btn btn-success" id="btn_guardado2">Agregar producto</button>
                 </div>
@@ -87,6 +109,12 @@
             <div class="info-product">
                 <div>
                   <h5>Arquivet Aceite de Salmón Escocés para Perros y Gatos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController4.php"?>
+                  </table>
                   <p class="price">₡9500</p>
                   <button class="btn btn-success" id="btn_guardado3">Agregar producto</button>
                 </div>
@@ -99,6 +127,12 @@
             <div class="info-product">
                 <div>
                   <h5>Vétoquinol Ipakitine para Función Renal</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController5.php"?>
+                  </table>
                   <p class="price">₡11300</p>
                   <button class="btn btn-success" id="btn_guardado4">Agregar producto</button>
                 </div>
@@ -111,6 +145,12 @@
             <div class="info-product">
                 <div>
                   <h5>Virbac Pronefra para Problemas Renales en Perros y Gatos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController6.php"?>
+                  </table>
                   <p class="price">₡14500</p>
                   <button class="btn btn-success" id="btn_guardado5">Agregar producto</button>
                 </div>
@@ -130,6 +170,12 @@
             <div class="info-product">
                 <div>
                   <h5>Royal Canin Comida Húmeda Mini Puppy para Perro</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController7.php"?>
+                  </table>
                   <p class="price">₡700</p>
                   <button class="btn btn-success" id="btn_guardado6">Agregar producto</button>
                 </div>
@@ -142,6 +188,12 @@
             <div class="info-product">
                 <div>
                   <h5>Pro Plan Veterinary Diets Comida Húmeda Enlatada Gastrointestinal Mousse</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController8.php"?>
+                  </table>
                   <p class="price">₡26500</p>
                   <button class="btn btn-success" id="btn_guardado7">Agregar producto</button>
                 </div>
@@ -154,6 +206,12 @@
             <div class="info-product">
                 <div>
                   <h5>Royal Canin Maxi Adult Pienso para Perro Adulto de Razas Tamaño Grande</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController9.php"?>
+                  </table>
                   <p class="price">₡43500</p>
                   <button class="btn btn-success" id="btn_guardado8">Agregar producto</button>
                 </div>
@@ -166,6 +224,12 @@
             <div class="info-product">
                 <div>
                   <h5>Pack 24 Gourmet Comida Húmeda Gold Tartelette de Pollo y Zanahoria para Gatos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController10.php"?>
+                  </table>
                   <p class="price">₡14000</p>
                   <button class="btn btn-success" id="btn_guardado9">Agregar producto</button>
                 </div>
@@ -178,6 +242,12 @@
             <div class="info-product">
                 <div>
                   <h5>Grature Pienso Anti Bolas de Pelo para Gatos Adultos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController11.php"?>
+                  </table>
                   <p class="price">₡5000</p>
                   <button class="btn btn-success" id="btn_guardado10">Agregar producto</button>
                 </div>
@@ -190,6 +260,12 @@
             <div class="info-product">
                 <div>
                   <h5>Royal Canin Maine Coon Pienso para Gato Adulto de Raza </h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController12.php"?>
+                  </table>
                   <p class="price">₡25500</p>
                   <button class="btn btn-success" id="btn_guardado11">Agregar producto</button>
                 </div>
@@ -207,6 +283,12 @@
             <div class="info-product">
                 <div>
                   <h5>Musqui Pelota de Tenis Amarilla para Perros</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController13.php"?>
+                  </table>
                   <p class="price">₡1500</p>
                   <button class="btn btn-success" id="btn_guardado12">Agregar producto</button>
                 </div>
@@ -219,6 +301,12 @@
             <div class="info-product">
                 <div>
                   <h5>Trixie Cocodrilo Látex con Sonido</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController14.php"?>
+                  </table>
                   <p class="price">₡6000</p>
                   <button class="btn btn-success" id="btn_guardado13">Agregar producto</button>
                 </div>
@@ -231,6 +319,12 @@
             <div class="info-product">
                 <div>
                   <h5>Nayeco Nudo con 2 Pelotas de Tennis Bicolor</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController15.php"?>
+                  </table>
                   <p class="price">₡3500</p>
                   <button class="btn btn-success" id="btn_guardado14">Agregar producto</button>
                 </div>
@@ -243,6 +337,12 @@
             <div class="info-product">
                 <div>
                   <h5>Catit Senses Alfombrilla de Juegos</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController16.php"?>
+                  </table>
                   <p class="price">₡14700</p>
                   <button class="btn btn-success" id="btn_guardado15">Agregar producto</button>
                 </div>
@@ -255,6 +355,12 @@
             <div class="info-product">
                 <div>
                   <h5>Trixie Guante De Juego Con Juguetes, Marrón</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController17.php"?>
+                  </table>
                   <p class="price">₡4500</p>
                   <button class="btn btn-success" id="btn_guardado16">Agregar producto</button>
                 </div>
@@ -267,8 +373,16 @@
             <div class="info-product">
                 <div>
                   <h5>Trixie Tortuga de Peluche con Sonido</h5>
+                  <table border="1">
+                    <tr>
+                      <th>Unidades</th>
+                    </tr>
+                    <?php include "..\controllers\stockController18.php"?>
+                  </table>
                   <p class="price">₡8000</p>
                   <button class="btn btn-success" id="btn_guardado17">Agregar producto</button>
+                  <br><br>
+                  <br><br>
                 </div>
             </div>
           </div>
@@ -277,19 +391,96 @@
           <h2>Servicios</h2>
           <br><br>
           
-          <label for="servicios">Selecciona un servicio:</label>
-          <select id="servicios" name="servicios">
-            <option value="1">Cirugía</option>
-            <option value="2">Consulta General</option>
-            <option value="3">Hospitalizaciones</option>
-            <option value="4">Consultas especializadas</option>
-            <option value="5">Hotel y Spa</option>
-            <option value="6">Fisioterapia</option>
-            <option value="7">Control de salud</option>
-            <option value="8">Consulta exóticos y silvestres</option>
-            <option value="9">Grooming</option>
-          </select>
-          <button class="btn btn-success" id="btn_guardado17">Agregar producto</button>
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Consulta General</h5>
+                  <p class="price">₡15000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Cirugía</h5>
+                  <p class="price">₡25000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Hospitalizaciones</h5>
+                  <p class="price">₡35000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Consultas Especializadas</h5>
+                  <p class="price">₡20000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Hotel Y Spa</h5>
+                  <p class="price">₡45000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Fisioterapia</h5>
+                  <p class="price">₡30000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Control de Salud</h5>
+                  <p class="price">₡50000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Consulta Exóticos y Silvestres</h5>
+                  <p class="price">₡40000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="info-product">
+                <div>
+                  <h5>Grooming</h5>
+                  <p class="price">₡20000</p>
+                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                </div>
+            </div>
+          </div>
+
 
 <table>
   <tr>
