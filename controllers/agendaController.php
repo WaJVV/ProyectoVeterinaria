@@ -26,12 +26,7 @@ function eliminarCita($idCita) {
     $conn->close();
 }
 
-// Verifica ID de cita para eliminar
-if (isset($_POST["idCita"])) {
-    $idCita = $_POST["idCita"];
-    eliminarCita($idCita);
-}
-
+// Función para agregar una cita
 function agregarCita() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Procesar el formulario
@@ -46,7 +41,7 @@ function agregarCita() {
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "drpets";;
+        $dbname = "drpets";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
@@ -73,9 +68,18 @@ function agregarCita() {
         $rowIdMascota = $resultIdMascota->fetch_assoc();
         $idMascota = $rowIdMascota["idMascota"];
 
-        // Insertar la cita en la base de datos
-        $sql = "INSERT INTO citas (idCliente, idMascota, fecha_visita, motivo, idVeterinario)
-                VALUES ('$idCliente', '$idMascota', '$fecha $hora', '$tipoCita', '$idVeterinario')";
+        // Obtener el último ID de la tabla citas
+        $sqlLastId = "SELECT MAX(idCitas) AS lastId FROM citas";
+        $resultLastId = $conn->query($sqlLastId);
+        $rowLastId = $resultLastId->fetch_assoc();
+        $lastId = $rowLastId["lastId"];
+
+        // Incrementar el último ID para obtener el nuevo ID de la cita
+        $newId = $lastId + 1;
+
+        // Insertar la cita en la base de datos con el nuevo ID
+        $sql = "INSERT INTO citas (idCitas, idCliente, idMascota, fecha_visita, motivo, idVeterinario)
+                VALUES ('$newId', '$idCliente', '$idMascota', '$fecha $hora', '$tipoCita', '$idVeterinario')";
         if ($conn->query($sql) === TRUE) {
             echo "Cita agregada correctamente";
         } else {
@@ -89,14 +93,24 @@ function agregarCita() {
     }
 }
 
-agregarCita();
+
+// Verifica ID de cita para eliminar
+if (isset($_POST["idCita"])) {
+    $idCita = $_POST["idCita"];
+    eliminarCita($idCita);
+}
+
+// Llamar a la función para agregar una cita solo si se envió el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["identificacionCliente"])) {
+    agregarCita();
+}
 
 function obtenerCitasJSON() {
     // Conectar a la base de datos
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "drpets";;
+    $dbname = "drpets";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -138,6 +152,7 @@ function obtenerCitasJSON() {
 
 // Llamar a la función para obtener el JSON de las citas
 $eventsJSON = obtenerCitasJSON();
+
 
 // Mostrar el JSON en la página para que pueda ser utilizado por el calendario
 echo $eventsJSON;

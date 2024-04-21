@@ -53,7 +53,6 @@ if(isset($_POST['cerrarSesion'])) {
                     <li class="nav-item">
                         <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
                     </li>
-                    
                 </ul>
             </div>
         </nav>
@@ -124,13 +123,13 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                                 Recordatorios</button>
                                             <ul class="submenu">
                                                 <li><a href="..\models\agenda.php">Agendas</a></li>
-                                                <li><a href="..\views\productoInventario.php">Inventario</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">
                                             <button class="opcion-desplegable btn btn-link">Informes</button>
                                             <ul class="submenu">
                                                 <li><a href="..\models\reportes.php">Reportes</a></li>
+                                                <li><a href="..\views\productoInventario.php">Inventario</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">
