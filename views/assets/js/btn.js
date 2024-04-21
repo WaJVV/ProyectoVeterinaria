@@ -163,7 +163,79 @@ $('#btn_guardado17').click(function(){
 $('#btn_guardado18').click(function(){
   Swal.fire({
       icon: "success",
-      title: "Producto agregado",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado19').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado20').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado21').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado22').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado23').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado24').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado25').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
+
+$('#btn_guardado26').click(function(){
+  Swal.fire({
+      icon: "success",
+      title: "Servicio agregado",
       showConfirmButton: false,
       timer: 1000
     });
