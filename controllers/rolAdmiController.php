@@ -53,6 +53,7 @@ if(isset($_POST['cerrarSesion'])) {
                     <li class="nav-item">
                         <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
                     </li>
+                    
                 </ul>
             </div>
         </nav>

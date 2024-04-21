@@ -1,7 +1,7 @@
 
 <?php
 //CONSTANTES
-define('DB_NAME_MYSQL', 'drpets');
+define('DB_NAME_MYSQL', 'drpetsvet');
 define('DB_HOST_MYSQL', 'localhost');
 define('DB_USER_MYSQL', 'root');
 define('DB_PASSWORD_MYSQL', '');

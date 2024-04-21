@@ -8,9 +8,11 @@ class Veterinario extends Conexion
     =============================================*/
     protected static $cnx;
     private $idVeterinario = null;
-    private $nombre_veterinario = null;
-    private $apellido_paterno = null;
-    private $codigo_veterinario = null;
+    private $nombreVeterinario = null;
+    private $apellidoPaterno = null;
+    private $codigoVeterinario = null;
+    private $especialidad = null;
+
     /*=====  End of Atributos de la Clase  ======*/
 
     /*=============================================
@@ -32,27 +34,35 @@ class Veterinario extends Conexion
     }
     public function getNombreVeterinario()
     {
-        return $this->nombre_veterinario;
+        return $this->nombreVeterinario;
     }
-    public function setNombreVeterinario($nombre_veterinario)
+    public function setNombreVeterinario($nombreVeterinario)
     {
-        $this->nombre_veterinario = $nombre_veterinario;
+        $this->nombreVeterinario = $nombreVeterinario;
     }
     public function getApellidoPaterno()
     {
-        return $this->apellido_paterno;
+        return $this->apellidoPaterno;
     }
-    public function setApellidoPaterno($apellido_paterno)
+    public function setApellidoPaterno($apellidoPaterno)
     {
-        $this->apellido_paterno = $apellido_paterno;
+        $this->apellidoPaterno = $apellidoPaterno;
     }
     public function getCodigoVeterinario()
     {
-        return $this->codigo_veterinario;
+        return $this->codigoVeterinario;
     }
-    public function setCodigoVeterinario($codigo_veterinario)
+    public function setCodigoVeterinario($codigoVeterinario)
     {
-        $this->codigo_veterinario = $codigo_veterinario;
+        $this->codigoVeterinario = $codigoVeterinario;
+    }
+    public function getEspecialidad()
+    {
+        return $this->especialidad;
+    }
+    public function setEspecialidad($especialidad)
+    {
+        $this->especialidad = $especialidad;
     }
     /*=====  End of Encapsuladores de la Clase  ======*/
     public static function getConexion(){
@@ -75,9 +85,11 @@ class Veterinario extends Conexion
             $usuario = new Veterinario();
             // Agregar los nuevos atributos de veterinario
             $usuario->setIdVeterinario($encontrado['idVeterinario']);
-            $usuario->setNombreVeterinario($encontrado['nombre_veterinario']);
-            $usuario->setApellidoPaterno($encontrado['apellido_paterno']);
-            $usuario->setCodigoVeterinario($encontrado['codigo_veterinario']);
+            $usuario->setNombreVeterinario($encontrado['nombreVeterinario']);
+            $usuario->setApellidoPaterno($encontrado['apellidoPaterno']);
+            $usuario->setCodigoVeterinario($encontrado['codigoVeterinario']);
+            $usuario->setEspecialidad($encontrado['especialidad']);
+
             $arr[] = $usuario;
         }
         return $arr;
@@ -89,12 +101,12 @@ class Veterinario extends Conexion
 }
 
 public function verificarExistenciaDb(){
-    $query = "SELECT * FROM Veterinario WHERE codigo_veterinario=:codigo_veterinario";
+    $query = "SELECT * FROM Veterinario WHERE codigoVeterinario=:codigoVeterinario";
     try {
         self::getConexion();
         $resultado = self::$cnx->prepare($query);		
         $raza = $this->getCodigoVeterinario();	
-        $resultado->bindParam(":codigo_veterinario", $raza, PDO::PARAM_STR);
+        $resultado->bindParam(":codigoVeterinario", $codigoVeterinario, PDO::PARAM_STR);
         $resultado->execute();
         self::desconectar();
         $encontrado = false;
@@ -110,19 +122,22 @@ public function verificarExistenciaDb(){
 }
 
 public function guardarEnDb(){
-    $query = "INSERT INTO `Veterinario`(`idVeterinario`, `nombre_veterinario`, `apellido_paterno`, `codigo_veterinario`) VALUES (:idVeterinario, :nombre_veterinario, :apellido_paterno, :codigo_veterinario)";
+    $query = "INSERT INTO `Veterinario`(`idVeterinario`, `nombreVeterinario`, `apellidoPaterno`, `codigoVeterinario`, `especialidad`) VALUES (:idVeterinario, :nombreVeterinario, :apellidoPaterno, :codigoVeterinario, :especialidad)";
     try {
         self::getConexion();
         $idVeterinario = $this->getIdVeterinario();
         $nombreVeterinario = strtoupper($this->getNombreVeterinario());
         $apellidoPaterno = $this->getApellidoPaterno();
         $codigoVeterinario = $this->getCodigoVeterinario();
+        $especialidad = $this->getEspecialidad();
 
         $resultado = self::$cnx->prepare($query);
         $resultado->bindParam(":idVeterinario", $idVeterinario, PDO::PARAM_STR);
-        $resultado->bindParam(":nombre_veterinario", $nombreVeterinario, PDO::PARAM_STR);
-        $resultado->bindParam(":apellido_paterno", $apellidoPaterno, PDO::PARAM_STR);
-        $resultado->bindParam(":codigo_veterinario", $codigoVeterinario, PDO::PARAM_STR);
+        $resultado->bindParam(":nombreVeterinario", $nombreVeterinario, PDO::PARAM_STR);
+        $resultado->bindParam(":apellidoPaterno", $apellidoPaterno, PDO::PARAM_STR);
+        $resultado->bindParam(":codigoVeterinario", $codigoVeterinario, PDO::PARAM_STR);
+        $resultado->bindParam(":especialidad", $especialidad, PDO::PARAM_STR);
+
         $resultado->execute();
         self::desconectar();
     } catch (PDOException $Exception) {

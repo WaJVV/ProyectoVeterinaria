@@ -1,8 +1,8 @@
 
 function limpiarForms() {
-  $('#usuario_add').trigger('reset');
+  $('#veterinario_add').trigger('reset');
   $('#veterinario_update').trigger('reset');
-  $('#proveedor_add').trigger('reset'); // Agregado para limpiar el formulario de proveedores
+  $('#veterinario_add').trigger('reset'); // Agregado para limpiar el formulario de proveedores
 }
   function listarVeterinariosTodos() {
     tabla = $('#tbllistado').dataTable({
@@ -78,65 +78,6 @@ function limpiarForms() {
     });
   });
   
-  /*Funcion para activacion de usuarios
-  function activar(id) {
-    bootbox.confirm('¿Esta seguro de activar el usuario?', function (result) {
-      if (result) {
-        $.post(
-          '../controllers/usuarioController.php?op=activar',
-          { idUser: id },
-          function (data, textStatus, xhr) {
-            switch (data) {
-              case '1':
-                toastr.success('Usuario activado');
-                tabla.api().ajax.reload();
-                break;
-  
-              case '0':
-                toastr.error(
-                  'Error: El usuario no puede activarse. Consulte con el administrador...'
-                );
-                break;
-  
-              default:
-                toastr.error(data);
-                break;
-            }
-          }
-        );
-      }
-    });
-  }*/
-  
-  /*Funcion para desactivacion de usuarios
-  function desactivar(id) {
-    bootbox.confirm('¿Esta seguro de desactivar el usuario?', function (result) {
-      if (result) {
-        $.post(
-          '../controllers/usuarioController.php?op=desactivar',
-          { idUser: id },
-          function (data, textStatus, xhr) {
-            switch (data) {
-              case '1':
-                toastr.success('Usario desactivado');
-                tabla.api().ajax.reload();
-                break;
-  
-              case '0':
-                toastr.error(
-                  'Error: El modulo no puede desactivarse. Consulte con el administrador...'
-                );
-                break;
-  
-              default:
-                toastr.error(data);
-                break;
-            }
-          }
-        );
-      }
-    });
-  }
   
   /*Habilitacion de form de modificacion al presionar el boton en la tabla*/
   $('#tbllistado tbody').on(
@@ -151,6 +92,8 @@ function limpiarForms() {
         $('#EnombreVeterinario').val(data[1]);
         $('#EapellidoPaterno').val(data[2]);
         $('#EcodigoVeterinario').val(data[3]);
+        $('#Eespecialidad').val(data[4]);
+
         return false;
     }
 );

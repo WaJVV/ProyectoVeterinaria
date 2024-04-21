@@ -12,7 +12,8 @@ switch ($_GET["op"]) {
                 "1" => $reg->getNombreVeterinario(),
                 "2" => $reg->getApellidoPaterno(),
                 "3" => $reg->getCodigoVeterinario(),
-                "4" => ""
+                "4" => $reg->getEspecialidad(),
+                "5" => ""
 
             );
         }
@@ -27,9 +28,10 @@ switch ($_GET["op"]) {
 
     case 'insertar':
         $idVeterinario = isset($_POST["idVeterinario"]) ? trim($_POST["idVeterinario"]) : "";
-        $nombreVeterinario = isset($_POST["nombre_veterinario"]) ? trim($_POST["nombre_veterinario"]) : "";
-        $apellidoPaterno = isset($_POST["apellido_paterno"]) ? trim($_POST["apellido_paterno"]) : "";
-        $codigoVeterinario = isset($_POST["codigo_veterinario"]) ? trim($_POST["codigo_veterinario"]) : "";
+        $nombreVeterinario = isset($_POST["nombreVeterinario"]) ? trim($_POST["nombreVeterinario"]) : "";
+        $apellidoPaterno = isset($_POST["apellidoPaterno"]) ? trim($_POST["apellidoPaterno"]) : "";
+        $codigoVeterinario = isset($_POST["codigoVeterinario"]) ? trim($_POST["codigoVeterinario"]) : "";
+        $especialidad = isset($_POST["especialidad"]) ? trim($_POST["especialidad"]) : "";
 
         // Crear el objeto Veterinario y establecer los valores
         $veterinario = new Veterinario();
@@ -37,6 +39,7 @@ switch ($_GET["op"]) {
         $veterinario->setNombreVeterinario($nombreVeterinario);
         $veterinario->setApellidoPaterno($apellidoPaterno);
         $veterinario->setCodigoVeterinario($codigoVeterinario);
+        $veterinario->setEspecialidad($especialidad);
 
         // Llamar al método para guardar en la base de datos
         $veterinario->guardarEnDb();
