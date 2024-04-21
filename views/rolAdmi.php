@@ -53,8 +53,8 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "admin1";
-$password = "123";
+$username = "root";
+$password = "";
 $dbname = "drpets";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

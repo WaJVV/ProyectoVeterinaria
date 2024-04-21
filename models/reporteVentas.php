@@ -65,8 +65,8 @@
         // Establecer la conexión a la base de datos
         try {
             $dsn = 'mysql:host=localhost;dbname=drpets';
-            $user = 'admin1';
-            $pass = '123';
+            $user = 'root';
+            $pass = '';
             $pdo = new PDO($dsn, $user, $pass);
         } catch (PDOException $e) {
             echo 'Error al conectarse a la base de datos: ' . $e->getMessage();

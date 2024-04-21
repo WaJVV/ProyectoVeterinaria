@@ -47,28 +47,28 @@
     </header>
     </style>
 
-<div class ="Container"> 
-    <div class="FormBuscar d-flex justify-content-start align-items-left">
-    <aside class="bg-light p-1">
-        <h2 class="mb-4">Buscar Usuario</h2>
-        <form action="..\models\modificarUsuario.php" method="post">
-            <div class="mb-0">
-                <label for="usuario" class="form-label">Nombre de Usuario:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </form>
-    </aside>
-</div>
+    <div class="Container">
+        <div class="FormBuscar d-flex justify-content-start align-items-left">
+            <aside class="bg-light p-1">
+                <h2 class="mb-4">Buscar Usuario</h2>
+                <form action="..\models\modificarUsuario.php" method="post">
+                    <div class="mb-0">
+                        <label for="usuario" class="form-label">Nombre de Usuario:</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+            </aside>
+        </div>
 
         <section class="Modificar">
-        <?php
+            <?php
 // Buscar los datos del aside donde buscamos los usuarios
 if(isset($_POST['usuario'])) {
     // Datos de conexión a la base de datos
     $servername = "localhost";
-    $username = "admin1";
-    $password = "123";
+    $username = "root";
+    $password = "";
     $dbname = "drpets";
 
     try {
@@ -120,45 +120,45 @@ if(isset($_POST['usuario'])) {
 
         </section>
 
-    <main class="mt-1">
-        <div class="FormularioModificar container justify-content-start align-items-left">
-            <h2 class="titulo">Modificar Usuario</h2>
-            <form action="..\models\modificarUsuario.php" method="post">
-                <input type="hidden" name="usuario"
-                    value="<?php echo isset($nombre_usuario) ? $nombre_usuario : ''; ?>">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"
-                        value="<?php echo isset($nombre) ? $nombre : ''; ?>" required>
-                </div>
-                <div class="mb-3">
-                    <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" id="apellidos" name="apellidos"
-                        value="<?php echo isset($apellidos) ? $apellidos : ''; ?>" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email"
-                        value="<?php echo isset($email) ? $email : ''; ?>" required>
-                </div>
-                <div class="mb-3">
-                    <label for="contrasena" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="contrasena" name="contrasena" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Modificar Usuario</button>
-            </form>
-        </div>
-    </main>
-</div>
+        <main class="mt-1">
+            <div class="FormularioModificar container justify-content-start align-items-left">
+                <h2 class="titulo">Modificar Usuario</h2>
+                <form action="..\models\modificarUsuario.php" method="post">
+                    <input type="hidden" name="usuario"
+                        value="<?php echo isset($nombre_usuario) ? $nombre_usuario : ''; ?>">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            value="<?php echo isset($nombre) ? $nombre : ''; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos"
+                            value="<?php echo isset($apellidos) ? $apellidos : ''; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="<?php echo isset($email) ? $email : ''; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasena" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Modificar Usuario</button>
+                </form>
+            </div>
+        </main>
+    </div>
 
-<?php
+    <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si se recibieron los datos necesarios
     if (isset($_POST['usuario']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
         // Datos de conexión a la base de datos
         $servername = "localhost";
-        $username = "admin1";
-        $password = "123";
+        $username = "root";
+        $password = "";
         $dbname = "drpets";
 
         try {

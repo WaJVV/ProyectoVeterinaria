@@ -1,8 +1,8 @@
 <?php
 //php para uso de la tabla
 $dsn = 'mysql:host=localhost;dbname=drpets';
-$user = 'admin1';
-$pass = '123';
+$user = 'root';
+$pass = '';
 
 try {
     $dbh = new PDO($dsn, $user, $pass);

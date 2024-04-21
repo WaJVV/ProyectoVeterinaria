@@ -4,8 +4,8 @@
 function eliminarCita($idCita) {
     // Conectar a la base de datos
     $servername = "localhost";
-    $username = "admin1";
-    $password = "123";
+    $username = "root";
+    $password = "";
     $dbname = "drpets";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -44,9 +44,9 @@ function agregarCita() {
 
         // Conectar a la base de datos
         $servername = "localhost";
-        $username = "admin1";
-        $password = "123";
-        $dbname = "drpets";
+        $username = "root";
+        $password = "";
+        $dbname = "drpets";;
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
@@ -94,9 +94,9 @@ agregarCita();
 function obtenerCitasJSON() {
     // Conectar a la base de datos
     $servername = "localhost";
-    $username = "admin1";
-    $password = "123";
-    $dbname = "drpets";
+    $username = "root";
+    $password = "";
+    $dbname = "drpets";;
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -143,4 +143,3 @@ $eventsJSON = obtenerCitasJSON();
 echo $eventsJSON;
 
 ?>
-

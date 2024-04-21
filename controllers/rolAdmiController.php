@@ -240,10 +240,10 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
 if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email']) && isset($_POST['contrasena'])) {
     // Datos de conexión a la base de datos
     $servername = "localhost";
-    $username = "admin1";
-    $password = "123";
+    $username = "root";
+    $password = "";
     $dbname = "drpets";
-
+    
     // Crear una nueva conexión PDO
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

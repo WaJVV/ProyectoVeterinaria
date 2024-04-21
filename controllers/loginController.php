@@ -1,11 +1,10 @@
-
 <?php
 // Verificar si se enviaron los datos del formulario
 if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     // Datos de conexión a la base de datos
     $servername = "localhost";
-    $username = "admin1";
-    $password = "123";
+    $username = "root";
+    $password = "";
     $dbname = "drpets";
 
     // Crear conexión
@@ -19,7 +18,7 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
-       $sql = "SELECT * FROM admins WHERE usuario='$usuario' AND contrasena='$contrasena'";
+    $sql = "SELECT * FROM admins WHERE usuario='$usuario' AND contrasena='$contrasena'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -33,10 +32,10 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
         exit();
     } else {
         // Credenciales incorrectas, redirigir a la página de login con un mensaje de error
-        header("Location: ../models/login.php?error=incorrecto");
+        header("Location: ../views/login.php?error=incorrecto");
         exit();
     }
-    
+
     // Cerrar conexión
     $conn->close();
 }

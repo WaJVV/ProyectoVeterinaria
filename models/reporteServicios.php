@@ -80,8 +80,8 @@
             <tbody>
                 <?php
             $dsn = 'mysql:host=localhost;dbname=drpets';
-            $user = 'admin1';
-            $pass = '123';
+            $user = 'root';
+            $pass = '';
 
             try {
                 $dbh = new PDO($dsn, $user, $pass);
