@@ -152,7 +152,6 @@
                             <th>Nacimiento</th>
                             <th>Dirección</th>
                             <th>Teléfono Celular</th>
-                            <th>Opciones</th>
                         </thead>
                         <tbody>
                         </tbody>
@@ -165,7 +164,6 @@
                             <th>Nacimiento</th>
                             <th>Dirección</th>
                             <th>Teléfono Celular</th>
-                            <th>Opciones</th>
                         </tfooter>
                     </table>
                 </div>
