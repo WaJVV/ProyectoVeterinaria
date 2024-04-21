@@ -32,7 +32,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
+        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
       </li>
     </div>
     </ul>
@@ -396,7 +396,7 @@
                 <div>
                   <h5>Consulta General</h5>
                   <p class="price">₡15000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado18">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -406,7 +406,7 @@
                 <div>
                   <h5>Cirugía</h5>
                   <p class="price">₡25000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado19">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -416,7 +416,7 @@
                 <div>
                   <h5>Hospitalizaciones</h5>
                   <p class="price">₡35000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado20">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -426,7 +426,7 @@
                 <div>
                   <h5>Consultas Especializadas</h5>
                   <p class="price">₡20000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado21">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -436,7 +436,7 @@
                 <div>
                   <h5>Hotel Y Spa</h5>
                   <p class="price">₡45000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado22">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -446,7 +446,7 @@
                 <div>
                   <h5>Fisioterapia</h5>
                   <p class="price">₡30000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado23">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -456,7 +456,7 @@
                 <div>
                   <h5>Control de Salud</h5>
                   <p class="price">₡50000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado24">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -466,7 +466,7 @@
                 <div>
                   <h5>Consulta Exóticos y Silvestres</h5>
                   <p class="price">₡40000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado25">Agregar servicio</button>
                 </div>
             </div>
           </div>
@@ -476,7 +476,7 @@
                 <div>
                   <h5>Grooming</h5>
                   <p class="price">₡20000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar servicio</button>
+                  <button class="btn btn-success" id="btn_guardado26">Agregar servicio</button>
                 </div>
             </div>
           </div>
