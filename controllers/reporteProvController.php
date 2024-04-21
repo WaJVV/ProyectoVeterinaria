@@ -41,7 +41,7 @@ class PDF extends FPDF{
 }
 
 // Conexión a la base de datos
-$dsn = 'mysql:host=localhost;dbname=drpets';
+$dsn = 'mysql:host=localhost;dbname=drpetsvet';
 $user = 'root';
 $pass = '';
 

@@ -68,7 +68,7 @@ if(isset($_POST['usuario'])) {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "drpets";;
+    $dbname = "drpetsvet";
 
     try {
         // Crear conexión PDO
@@ -135,7 +135,7 @@ if(isset($_GET['id_usuario'])) {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "drpets";
+    $dbname = "drpetsvet";
 
     try {
         // Crear conexión PDO

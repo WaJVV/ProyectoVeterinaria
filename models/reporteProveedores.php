@@ -53,7 +53,7 @@
                 <?php
                 // Establecer la conexión a la base de datos
                 try {
-                    $dsn = 'mysql:host=localhost;dbname=drpets';
+                    $dsn = 'mysql:host=localhost;dbname=drpetsvet';
                     $user = 'root';
                     $pass = '';
                     $pdo = new PDO($dsn, $user, $pass);
@@ -88,7 +88,7 @@
         <?php
         // Establecer la conexión a la base de datos
         try {
-            $dsn = 'mysql:host=localhost;dbname=drpets';
+            $dsn = 'mysql:host=localhost;dbname=drpetsvet';
             $user = 'root';
             $pass = '';
             $pdo = new PDO($dsn, $user, $pass);
