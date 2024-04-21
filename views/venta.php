@@ -63,7 +63,7 @@
                   </table>
                   </div>
                   <p class="price">₡5000</p>
-                    <button class="btn btn-success" id="btn_guardado">Agregar producto</button>
+                    <button class="btn btn-success" id="btn_guardado" data-producto-id="1">Comprar</button>
                 </div>
             </div>
           </div>
@@ -81,7 +81,7 @@
                     <?php include "..\controllers\stockController2.php"?>
                   </table>                  
                   <p class="price">₡3500</p>
-                    <button class="btn btn-success" id="btn_guardado1">Agregar producto</button>
+                    <button class="btn btn-success" id="btn_guardado1" data-producto-id="2">Comprar</button>
                 </div>
             </div>
           </div><div class="item">
@@ -98,7 +98,7 @@
                     <?php include "..\controllers\stockController3.php"?>
                   </table>
                   <p class="price">₡16500</p>
-                  <button class="btn btn-success" id="btn_guardado2">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado2" data-producto-id="3">Comprar</button>
                 </div>
             </div>
           </div>
@@ -116,7 +116,7 @@
                     <?php include "..\controllers\stockController4.php"?>
                   </table>
                   <p class="price">₡9500</p>
-                  <button class="btn btn-success" id="btn_guardado3">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado3" data-producto-id="4">Comprar</button>
                 </div>
             </div>
           </div>
@@ -134,7 +134,7 @@
                     <?php include "..\controllers\stockController5.php"?>
                   </table>
                   <p class="price">₡11300</p>
-                  <button class="btn btn-success" id="btn_guardado4">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado4" data-producto-id="5">Comprar</button>
                 </div>
             </div>
           </div>
@@ -152,7 +152,7 @@
                     <?php include "..\controllers\stockController6.php"?>
                   </table>
                   <p class="price">₡14500</p>
-                  <button class="btn btn-success" id="btn_guardado5">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado5" data-producto-id="6">Comprar</button>
                 </div>
             </div>
           </div>
@@ -177,7 +177,7 @@
                     <?php include "..\controllers\stockController7.php"?>
                   </table>
                   <p class="price">₡700</p>
-                  <button class="btn btn-success" id="btn_guardado6">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado6" data-producto-id="7">Comprar</button>
                 </div>
             </div>
           </div>
@@ -195,7 +195,7 @@
                     <?php include "..\controllers\stockController8.php"?>
                   </table>
                   <p class="price">₡26500</p>
-                  <button class="btn btn-success" id="btn_guardado7">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado7" data-producto-id="8">Comprar</button>
                 </div>
             </div>
           </div>
@@ -213,7 +213,7 @@
                     <?php include "..\controllers\stockController9.php"?>
                   </table>
                   <p class="price">₡43500</p>
-                  <button class="btn btn-success" id="btn_guardado8">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado8" data-producto-id="9">Comprar</button>
                 </div>
             </div>
           </div>
@@ -231,7 +231,7 @@
                     <?php include "..\controllers\stockController10.php"?>
                   </table>
                   <p class="price">₡14000</p>
-                  <button class="btn btn-success" id="btn_guardado9">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado9" data-producto-id="10">Comprar</button>
                 </div>
             </div>
           </div>
@@ -249,7 +249,7 @@
                     <?php include "..\controllers\stockController11.php"?>
                   </table>
                   <p class="price">₡5000</p>
-                  <button class="btn btn-success" id="btn_guardado10">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado10" data-producto-id="11">Comprar</button>
                 </div>
             </div>
           </div>
@@ -267,7 +267,7 @@
                     <?php include "..\controllers\stockController12.php"?>
                   </table>
                   <p class="price">₡25500</p>
-                  <button class="btn btn-success" id="btn_guardado11">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado11" data-producto-id="12">Comprar</button>
                 </div>
             </div>
           </div>
@@ -290,7 +290,7 @@
                     <?php include "..\controllers\stockController13.php"?>
                   </table>
                   <p class="price">₡1500</p>
-                  <button class="btn btn-success" id="btn_guardado12">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado12" data-producto-id="13">Comprar</button>
                 </div>
             </div>
           </div>
@@ -308,7 +308,7 @@
                     <?php include "..\controllers\stockController14.php"?>
                   </table>
                   <p class="price">₡6000</p>
-                  <button class="btn btn-success" id="btn_guardado13">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado13" data-producto-id="14">Comprar</button>
                 </div>
             </div>
           </div>
@@ -326,7 +326,7 @@
                     <?php include "..\controllers\stockController15.php"?>
                   </table>
                   <p class="price">₡3500</p>
-                  <button class="btn btn-success" id="btn_guardado14">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado14" data-producto-id="15">Comprar</button>
                 </div>
             </div>
           </div>
@@ -344,7 +344,7 @@
                     <?php include "..\controllers\stockController16.php"?>
                   </table>
                   <p class="price">₡14700</p>
-                  <button class="btn btn-success" id="btn_guardado15">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado15" data-producto-id="16">Comprar</button>
                 </div>
             </div>
           </div>
@@ -362,7 +362,7 @@
                     <?php include "..\controllers\stockController17.php"?>
                   </table>
                   <p class="price">₡4500</p>
-                  <button class="btn btn-success" id="btn_guardado16">Agregar producto</button>
+                  <button class="btn btn-success" id="btn_guardado16" data-producto-id="17">Comprar</button>
                 </div>
             </div>
           </div>
@@ -380,9 +380,7 @@
                     <?php include "..\controllers\stockController18.php"?>
                   </table>
                   <p class="price">₡8000</p>
-                  <button class="btn btn-success" id="btn_guardado17">Agregar producto</button>
-                  <br><br>
-                  <br><br>
+                  <button class="btn btn-success" id="btn_guardado17" data-producto-id="18">Comprar</button>
                 </div>
             </div>
           </div>
@@ -505,6 +503,7 @@
 </div>
 <script src="assets/js/productos.js"></script>
 <script src="assets/js/btn.js"></script>
+<script src="assets/js/ManejoProductosInventarios.js"></script>
 </body>
 <footer class="bg-dark">
 

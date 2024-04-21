@@ -52,6 +52,10 @@
       <canvas id="grafica2"></canvas>
     </div>
 
+    <div>
+      <canvas id="grafica3"></canvas>
+    </div>
+
   
 
   </main>
@@ -71,7 +75,8 @@
     </div>
   </footer>
   <script type="text/javascript" src="../views/assets/js/graficaCliente.js"></script>
-  <script type="text/javascript" src="../views/assets/js/graficaVentas.js"></script>
+  <script type="text/javascript" src="../views/assets/js/graficaProductos.js"></script>
+  <script type="text/javascript" src="../views/assets/js/graficaProveedores.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
 

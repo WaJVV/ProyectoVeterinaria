@@ -172,6 +172,42 @@ class ProductoInventario extends Conexion
             return json_encode($error);
         }
     }
+
+    public function restarStock($idProducto) {
+        try {
+            // Verificar si el producto existe y obtener su stock actual
+            $query = "SELECT stockProducto FROM productoinventario WHERE idProducto = :idProducto";
+            self::getConexion();
+            $resultado = self::$cnx->prepare($query);
+            $resultado->bindParam(":idProducto", $idProducto, PDO::PARAM_INT);
+            $resultado->execute();
+            $stockActual = $resultado->fetchColumn();
+    
+            // Verificar si hay suficiente stock para restar una unidad
+            if ($stockActual > 0) {
+                // Restar una unidad al stock actual
+                $nuevoStock = $stockActual - 1;
+    
+                // Actualizar el stock en la base de datos
+                $queryActualizar = "UPDATE productoinventario SET stockProducto = :nuevoStock WHERE idProducto = :idProducto";
+                $resultadoActualizar = self::$cnx->prepare($queryActualizar);
+                $resultadoActualizar->bindParam(":nuevoStock", $nuevoStock, PDO::PARAM_INT);
+                $resultadoActualizar->bindParam(":idProducto", $idProducto, PDO::PARAM_INT);
+                $resultadoActualizar->execute();
+                
+                self::desconectar();
+                return "Stock restado correctamente";
+            } else {
+                self::desconectar();
+                return "No hay suficiente stock disponible para restar";
+            }
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
+            return $error;
+        }
+    }
+    
     
 }
 ?>
