@@ -481,23 +481,6 @@
             </div>
           </div>
 
-
-<table>
-  <tr>
-    <td colspan="5" class="textright">SUBTOTAL Q.</td>
-    <td class="textright"><?php echo '7000'; ?></td>
-  </tr>
-  <tr>
-    <td colspan="5" class="textright">IVA (13%)</td>
-    <td class="textright"><?php echo '500'; ?></td>
-  </tr>
-  <tr>
-    <td colspan="5" class="textright">TOTAL Q.</td>
-    <td class="textright"><?php echo '7500'; ?></td>
-  </tr>
-</table>
-
-
           <br><br>
 
         <div>
