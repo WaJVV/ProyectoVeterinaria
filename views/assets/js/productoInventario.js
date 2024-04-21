@@ -77,6 +77,8 @@ function limpiarForms() {
         $('#Edescripcion').val(data[2]); // Cambiar el índice si es diferente
         $('#EstockProducto').val(data[3]); // Cambiar el índice si es diferente
         $('#EidProveedor').val(data[4]); // Cambiar el índice si es diferente
+        $('#EPrecio').val(data[5]); // Cambiar el índice si es diferente
+
         $('#formulario_add').hide();
         $('#formulario_update').show();
         return false;
