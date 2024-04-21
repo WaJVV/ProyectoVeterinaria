@@ -37,7 +37,7 @@
             $servername = "localhost";
             $username = "admin1";
             $password = "123";
-            $dbname = "drpets";
+            $dbname = "drpetsvet";
 
             // Crear conexión
             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -93,7 +93,7 @@ if(isset($_GET['id_usuario'])) {
     $servername = "localhost";
     $username = "admin1";
     $password = "123";
-    $dbname = "drpets";
+    $dbname = "drpetsvet";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);

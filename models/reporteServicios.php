@@ -79,7 +79,7 @@
             </thead>
             <tbody>
                 <?php
-            $dsn = 'mysql:host=localhost;dbname=drpets';
+            $dsn = 'mysql:host=localhost;dbname=drpetsvet';
             $user = 'root';
             $pass = '';
 

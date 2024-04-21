@@ -15,7 +15,7 @@ if(isset($_POST['cerrarSesion'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrPets</title>
+    <title>Drpets</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
@@ -174,7 +174,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                     <div class="row justify-content-start">
                         <div class="col-md-5">
                             <div class="card mb-3">
-                                <img src="..\img\mision.jpg" class="card-img-top" alt="misionDrPets">
+                                <img src="..\img\mision.jpg" class="card-img-top" alt="misiondrpets">
                                 <div class="card-body">
                                     <h5 class="card-title">Misión</h5>
                                     <p class="card-text text-justify">Proporcionar atención veterinaria excepcional y
@@ -190,7 +190,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                         </div>
                         <div class="col-md-5">
                             <div class="card mb-3">
-                                <img src="..\img\vision.jpg" class="card-img-top" alt="visionDrPets">
+                                <img src="..\img\vision.jpg" class="card-img-top" alt="visiondrpets">
                                 <div class="card-body">
                                     <h5 class="card-title">Visión</h5>
                                     <p class="card-text text-justify">Nos visualizamos como líderes en el cuidado de la
@@ -242,7 +242,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['email'
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "drpets";
+    $dbname = "drpetsvet";
     
     // Crear una nueva conexión PDO
     try {

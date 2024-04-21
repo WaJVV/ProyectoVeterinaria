@@ -1,6 +1,6 @@
 <?php
 //php para uso de la tabla
-$dsn = 'mysql:host=localhost;dbname=drpets';
+$dsn = 'mysql:host=localhost;dbname=drpetsvet';
 $user = 'root';
 $pass = '';
 

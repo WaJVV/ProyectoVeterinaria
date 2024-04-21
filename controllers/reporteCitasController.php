@@ -104,7 +104,7 @@ class PDF extends FPDF{
 }
 
 // Conexión a la base de datos
-$dsn = 'mysql:host=localhost;dbname=drpets';
+$dsn = 'mysql:host=localhost;dbname=drpetsvet';
 $user = 'admin1';
 $pass = '123';
 
