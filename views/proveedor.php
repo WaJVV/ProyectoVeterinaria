@@ -170,7 +170,6 @@
                             <th>Nombre</th>
                             <th>Dirección</th>
                             <th>Teléfono</th>
-                            <th>Opciones</th>
                         </thead>
                         <tbody>
                         </tbody>
@@ -179,7 +178,6 @@
                             <th>Nombre</th>
                             <th>Dirección</th>
                             <th>Teléfono</th>
-                            <th>Opciones</th>
                         </tfoot>
                     </table>
                 </div>

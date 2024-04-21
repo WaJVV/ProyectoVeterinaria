@@ -134,24 +134,22 @@
                             <table id="tbllistado"
                                 class="table table-striped table-bordered table-hover">
                                 <thead>
-                                    <th>ID</th>
-                                    <th>NOMBRE</th>
-                                    <th>RAZA</th>
-                                    <th>PESO</th>
-                                    <th>NACIMIENTO</th>
-                                    <th>CLIENTE</th>
-                                    <th>OPCIONES</th>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Raza</th>
+                                    <th>Peso</th>
+                                    <th>Nacimiento</th>
+                                    <th>Cliente</th>
                                 </thead>
                                 <tbody>
                                 </tbody>
                                 <tfooter>
-                                <th>ID</th>
-                                    <th>NOMBRE</th>
-                                    <th>RAZA</th>
-                                    <th>PESO</th>
-                                    <th>NACIMIENTO</th>
-                                    <th>CLIENTE</th>
-                                    <th>OPCIONES</th>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Raza</th>
+                                    <th>Peso</th>
+                                    <th>Nacimiento</th>
+                                    <th>Cliente</th>
                                 </tfooter>
                             </table>
                         </div>

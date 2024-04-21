@@ -128,7 +128,6 @@
                             <th>Apellido Paterno</th>
                             <th>Código del Veterinario</th>
                             <th>Especialidad</th>
-                            <th>Opciones</th>
                         </thead>
                         <tbody>
                         </tbody>
@@ -138,7 +137,6 @@
                             <th>Apellido Paterno</th>
                             <th>Código del Veterinario</th>
                             <th>Especialidad</th>
-                            <th>Opciones</th>
                         </tfooter>
                     </table>
                 </div>

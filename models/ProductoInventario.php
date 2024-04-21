@@ -1,7 +1,7 @@
 <?php
 require_once '../config/Conexion.php';
 
-class ProductoInventario extends Conexion
+class productoInventario extends Conexion
 {
     /*=============================================
     =            Atributos de la Clase            =
@@ -12,6 +12,8 @@ class ProductoInventario extends Conexion
     private $descripcion = null;
     private $stockProducto = null;
     private $idProveedor = null;
+    private $precio = null;
+
     /*=====  End of Atributos de la Clase  ======*/
 
     /*=============================================
@@ -63,6 +65,14 @@ class ProductoInventario extends Conexion
     {
         $this->idProveedor = $idProveedor;
     }
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+    }
     /*=====  End of Encapsuladores de la Clase  ======*/
     public static function getConexion(){
         self::$cnx = Conexion::conectar();
@@ -86,6 +96,8 @@ class ProductoInventario extends Conexion
                 $productoInventario->setDescripcion($encontrado['descripcion']);
                 $productoInventario->setStockProducto($encontrado['stockProducto']);
                 $productoInventario->setIdProveedor($encontrado['idProveedor']);
+                $productoInventario->setPrecio($encontrado['precio']);
+
                 $arr[] = $productoInventario;
             }
             return $arr;
@@ -114,19 +126,22 @@ class ProductoInventario extends Conexion
     }
     
     public function guardarEnDb(){
-        $query = "INSERT INTO `productoinventario`(`nombre`, `descripcion`, `stockProducto`, `idProveedor`) VALUES (:nombre, :descripcion, :stockProducto, :idProveedor)";
+        $query = "INSERT INTO `productoinventario`(`nombre`, `descripcion`, `stockProducto`, `idProveedor`, `precio`) VALUES (:nombre, :descripcion, :stockProducto, :idProveedor, :precio)";
         try {
             self::getConexion();
             $nombre = strtoupper($this->getNombre());
             $descripcion = $this->getDescripcion();
             $stockProducto = $this->getStockProducto();
             $idProveedor = $this->getIdProveedor();
-    
+            $precio = $this->getPrecio();
+
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":nombre", $nombre, PDO::PARAM_STR);
             $resultado->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
             $resultado->bindParam(":stockProducto", $stockProducto, PDO::PARAM_INT);
             $resultado->bindParam(":idProveedor", $idProveedor, PDO::PARAM_INT);
+            $resultado->bindParam(":precio", $precio, PDO::PARAM_INT);
+
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $Exception) {
@@ -150,6 +165,8 @@ class ProductoInventario extends Conexion
                 $this->setDescripcion($encontrado['descripcion']);
                 $this->setStockProducto($encontrado['stockProducto']);
                 $this->setIdProveedor($encontrado['idProveedor']);
+                $this->setPrecio($encontrado['precio']);
+
             }
         } catch (PDOException $Exception) {
             self::desconectar();
@@ -157,8 +174,8 @@ class ProductoInventario extends Conexion
             return json_encode($error);
         }
     }
-    public function listarProveedores(){
-        $query = "SELECT id, nombre FROM proveedores";
+    public function listarProductosInventarioTodos(){
+        $query = "SELECT id, nombre FROM productoinventario";
         $arr = array();
         try {
             self::getConexion();
