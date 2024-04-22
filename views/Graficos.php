@@ -46,8 +46,6 @@
       <canvas id="grafica"></canvas>
     </div>
 
-  
-
     <div>
       <canvas id="grafica2"></canvas>
     </div>

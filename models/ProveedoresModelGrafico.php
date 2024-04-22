@@ -53,7 +53,7 @@ class Proveedor extends Conexion
     }
 
     public function contarProveedoresPorUbicacion(){
-        $query = "SELECT COUNT(*) AS cantidad FROM proveedores GROUP BY direccionProveedor";
+        $query = "SELECT direccionProveedor, COUNT(*) AS cantidad FROM proveedores GROUP BY direccionProveedor ORDER BY cantidad DESC";
         $arr = array();
         try {
             self::getConexion();

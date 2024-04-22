@@ -1,13 +1,13 @@
 (async () => {
     try {
-        const respuestaDireccionesRaw = await fetch("../controllers/ProveedoresControllerGrafica.php?op=contarProveedoresPorUbicacion");
-        const NombreProducto = await respuestaDireccionesRaw.json();
+        const respuestaDireccionesRaw = await fetch("../controllers/ProveedoresControllerGrafica.php?op=obtenerTodasLasDireccionesDeProveedores"); // 
+        const NombreProveedor = await respuestaDireccionesRaw.json();
 
-        const respuestaConteoRaw = await fetch("../controllers/ProveedoresControllerGrafica.php?op=obtenerTodasLasDireccionesDeProveedores");
-        const CantidadProductos = await respuestaConteoRaw.json();
+        const respuestaConteoRaw = await fetch("../controllers/ProveedoresControllerGrafica.php?op=contarProveedoresPorUbicacion"); // 
+        const CantidadProveedores = await respuestaConteoRaw.json();
 
-        const etiquetas = NombreProducto; 
-        const datos = CantidadProductos; 
+        const etiquetas = NombreProveedor; 
+        const datos = CantidadProveedores; 
 
         const datosProductos = {
             label: "Proveedores por ubicacion ",
