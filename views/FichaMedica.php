@@ -36,22 +36,7 @@
         <a class="nav-link disabled text-white" href="..\views\contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\models\login.php">Sesión</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\pacientes.php">Pacientes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\proveedor.php">Proveedor</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\cliente.php">Cliente</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\veterinario.php">Veterinario</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="..\views\fichaMedica.php">Ficha Medica</a>
+        <a class="nav-link disabled text-white" href="..\views\login.php">Sesión</a>
       </li>
     </ul>
   </div>
@@ -191,8 +176,3 @@
     <script src="assets/js/fichaMedica.js"></script>
 </body>
 </HTML>
-
-
-
-
-
