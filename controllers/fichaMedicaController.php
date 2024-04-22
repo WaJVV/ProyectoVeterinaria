@@ -3,32 +3,32 @@ require_once '../models/fichaMedica.php';
 
 switch ($_GET["op"]) {
     case 'listar_para_tabla':
-        $fichaMedica = new fichaMedica();
-        $fichasMedicas = $fichaMedica->listarTodosDb();
-        $data = array();
-        foreach ($fichasMedicas as $reg) {
-            $data[] = array(
-                "0" => $reg->getIdFichaMedica(),
-                "1" => $reg->getIdMascota(),
-                "2" => $reg->getFecha_cita(),
-                "3" => $reg->getIdVeterinario(),
-                "4" => $reg->getPeso(),
-                "5" => $reg->getTemperatura(),
-                "6" => $reg->getMotivo(),
-                "7" => $reg->getDiagnostico(),
-                "8" => $reg->getTratamiento(),
-                "9" => ""
-
+        $fichaMedica = new FichaMedica();
+        $fichaMedicas = $fichaMedica->listarTodosDb();
+            $data = array();
+            foreach ($fichaMedicas as $reg) {
+                $data[] = array(
+                    "0" => $reg->getIdFichaMedica(),
+                    "1" => $reg->getIdMascota(),
+                    "2" => $reg->getFecha_cita(),
+                    "3" => $reg->getIdVeterinario(),
+                    "4" => $reg->getPeso(),
+                    "5" => $reg->getTemperatura(),
+                    "6" => $reg->getMotivo(),
+                    "7" => $reg->getDiagnostico(),
+                    "8" => $reg->getTratamiento(),
+                    "9" => ""
+                );
+            }
+            $resultados = array(
+                "sEcho" => 1, ##informacion para datatables
+                "iTotalRecords" => count($data), ## total de registros al datatable
+                "iTotalDisplayRecords" => count($data), ## enviamos el total de registros a visualizar
+                "aaData" => $data
             );
-        }
-        $resultados = array(
-            "sEcho" => 1, // Información para DataTables
-            "iTotalRecords" => count($data), // Total de registros al DataTables
-            "iTotalDisplayRecords" => count($data), // Enviamos el total de registros a visualizar
-            "aaData" => $data
-        );
-        echo json_encode($resultados);
-        break;
+            echo json_encode($resultados);
+            break;
+       
 
     case 'insertar':
         $idMascota = isset($_POST["idMascota"]) ? trim($_POST["idMascota"]) : "";
@@ -41,7 +41,7 @@ switch ($_GET["op"]) {
         $tratamiento = isset($_POST["tratamiento"]) ? trim($_POST["tratamiento"]) : "";
 
         // Crear el objeto Proveedor y establecer los valores
-        $fichaMedica = new fichaMedica();
+        $fichaMedica = new Ficha();
         $fichaMedica->setIdMascota($idMascota);
         $fichaMedica->setFecha_cita($fecha_cita);
         $fichaMedica->setIdVeterinario($idVeterinario);
@@ -63,6 +63,8 @@ switch ($_GET["op"]) {
             echo 3; // Fallo al realizar el registro del proveedor
         }
         break;
-        
+
+         
+     
 }
 ?>

@@ -29,6 +29,7 @@ switch ($_GET["op"]) {
         );
         echo json_encode($resultados);
         break;
+        
 
     case 'insertar':
         $identificacion = isset($_POST["identificacion"]) ? trim($_POST["identificacion"]) : "";
