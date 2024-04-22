@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "admin1";
 $password = "123";
-$dbname = "drpets";
+$dbname = "drpetsvet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);

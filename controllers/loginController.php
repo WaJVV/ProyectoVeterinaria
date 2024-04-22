@@ -5,7 +5,7 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "drpets";
+    $dbname = "drpetsvet";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);

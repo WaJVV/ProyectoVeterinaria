@@ -37,7 +37,7 @@
             $servername = "localhost";
             $username = "admin1";
             $password = "123";
-            $dbname = "drpets";
+            $dbname = "drpetsvet";
 
             // Crear conexión
             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $servername = "localhost";
         $username = "admin1";
         $password = "123";
-        $dbname = "drpets";
+        $dbname = "drpetsvet";
 
         // Crear conexión
         $conn = new mysqli($servername, $username, $password, $dbname);
