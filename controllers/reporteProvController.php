@@ -17,26 +17,89 @@ class PDF extends FPDF{
 
     function BodyTable($header, $data){
         $this->SetFont('Arial','',10); // Reducir el tamaño de la fuente
+        $colWidths = array(); // Ancho de las columnas
 
         // Encabezado
-        $this->SetFillColor(200,220,255);
-        $this->SetTextColor(0);
-        $this->SetDrawColor(0);
         foreach($header as $col){
-            $this->Cell(40,7,utf8_decode($col),1,0,'C',true);
+            $colWidths[] = $this->GetStringWidth(utf8_decode($col)) + 6; // Ancho de la columna basado en el texto
         }
-        $this->Ln();
+        $this->SetWidths($colWidths);
+        $this->Row($header);
 
         // Datos
-        $this->SetFillColor(255);
-        $this->SetTextColor(0);
-        $this->SetFont('');
         foreach($data as $row){
-            $this->Cell(40,6,utf8_decode($row['idProducto']),1);
-            $this->Cell(40,6,utf8_decode($row['producto']),1);
-            $this->Cell(40,6,utf8_decode($row['proveedor']),1);
-            $this->Ln();
+            $this->Row($row);
         }
+    }
+
+    function SetWidths($widths){
+        $this->widths = $widths;
+    }
+
+    function Row($data){
+        $nb = 0;
+        for($i=0;$i<count($data);$i++)
+            $nb = max($nb,$this->NbLines($this->widths[$i],utf8_decode($data[$i])));
+        $h = 5*$nb;
+        $this->CheckPageBreak($h);
+        for($i=0;$i<count($data);$i++){
+            $w = $this->widths[$i];
+            $a = isset($this->aligns[$i]) ? $this->aligns[$i] : 'L';
+            $x = $this->GetX();
+            $y = $this->GetY();
+            $this->Rect($x,$y,$w,$h);
+            $this->MultiCell($w,5,utf8_decode($data[$i]),0,$a);
+            $this->SetXY($x+$w,$y);
+        }
+        $this->Ln($h);
+    }
+
+    function NbLines($w,$txt){
+        $cw = $this->CurrentFont['cw'];
+        if($w==0)
+            $w = $this->w-$this->rMargin-$this->x;
+        $wmax = ($w-2*$this->cMargin)*1000/$this->FontSize;
+        $s = str_replace("\r",'',$txt);
+        $nb = strlen($s);
+        if($nb>0 and $s[$nb-1]=="\n")
+            $nb--;
+        $sep = -1;
+        $i = 0;
+        $j = 0;
+        $l = 0;
+        $nl = 1;
+        while($i<$nb){
+            $c = $s[$i];
+            if($c=="\n"){
+                $i++;
+                $sep = -1;
+                $j = $i;
+                $l = 0;
+                $nl++;
+                continue;
+            }
+            if($c==' ')
+                $sep = $i;
+            $l += $cw[$c];
+            if($l>$wmax){
+                if($sep==-1){
+                    if($i==$j)
+                        $i++;
+                } else
+                    $i = $sep+1;
+                $sep = -1;
+                $j = $i;
+                $l = 0;
+                $nl++;
+            } else
+                $i++;
+        }
+        return $nl;
+    }
+
+    function CheckPageBreak($h){
+        if($this->GetY()+$h>$this->PageBreakTrigger)
+            $this->AddPage($this->CurOrientation);
     }
 }
 
@@ -73,7 +136,11 @@ if (isset($_POST['proveedor'])) {
     $header = array('ID Producto', 'Producto', 'Proveedor');
 
     // Contenido de la tabla
-    $data = $proveedores;
+    $data = array();
+    foreach($proveedores as $proveedor){
+        $data[] = array($proveedor['idProducto'], $proveedor['producto'], $proveedor['proveedor']);
+    }
+    
 
     // Generar tabla en el PDF
     $pdf->BodyTable($header, $data);

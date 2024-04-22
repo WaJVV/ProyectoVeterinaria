@@ -54,15 +54,17 @@
             </div>
         </nav>
     </header>
-    <div>
-    <h1> Calendario de Actividades </h1>
-</div>
+
     <div class="botonesAgenda">
+
         <button id="mostrarFormularioBtn" class="btn btn-primary">Agregar Cita</button>
         <button id="verCitasBtn" class="btn btn-warning">Ver Citas</button>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal">
             Eliminar Cita
         </button>
+    </div>
+    <div>
+        <h1> Calendario de Actividades </h1>
     </div>
 
     <div class="citasNuevas">
@@ -87,9 +89,9 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                <label for="nombreMascota" class="col-sm-2 col-form-label">Nombre de la mascota:</label>
+                    <label for="nombreMascota" class="col-sm-2 col-form-label">Nombre de la mascota:</label>
                     <div class="col-auto">
-                    <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" required>
+                        <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" required>
                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                     </div>
                 </div>
@@ -141,60 +143,59 @@
     });
     </script>
 
-<script>
-//conexión al controlador para guardar las citas y actualizar la interfaz gráfica.
-document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
-    document.getElementById('formulario').style.display = 'block';
-});
+    <script>
+    //conexión al controlador para guardar las citas y actualizar la interfaz gráfica.
+    document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
+        document.getElementById('formulario').style.display = 'block';
+    });
 
-document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
-    var formData = new FormData(this);
-    fetch('../controllers/agendaController.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('resultado').innerHTML = data;
-            // Actualizar el calendario con la nueva cita
-            calendar.refetchEvents();
-            // Limpiar el formulario después de guardar la cita
-            document.getElementById('agregarCitaForm').reset();
-            // Ocultar el formulario
-            document.getElementById('formulario').style.display = 'none';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-});
+    document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+        var formData = new FormData(this);
+        fetch('../controllers/agendaController.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('resultado').innerHTML = data;
+                // Actualizar el calendario con la nueva cita
+                calendar.refetchEvents();
+                // Limpiar el formulario después de guardar la cita
+                document.getElementById('agregarCitaForm').reset();
+                // Ocultar el formulario
+                document.getElementById('formulario').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
 
-document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
-    var formData = new FormData(this);
-    fetch('../controllers/agendaController.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Mostrar el modal con el mensaje y el ID de la cita
-            $('#modalIdCita').modal('show');
-            document.getElementById('idCita').innerText = data.idCita;
-            
-            // Actualizar el calendario con la nueva cita
-            calendar.refetchEvents();
-            // Limpiar el formulario después de guardar la cita
-            document.getElementById('agregarCitaForm').reset();
-            // Ocultar el formulario
-            document.getElementById('formulario').style.display = 'none';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-});
+    document.getElementById('agregarCitaForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+        var formData = new FormData(this);
+        fetch('../controllers/agendaController.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Mostrar el modal con el mensaje y el ID de la cita
+                $('#modalIdCita').modal('show');
+                document.getElementById('idCita').innerText = data.idCita;
 
-</script>
+                // Actualizar el calendario con la nueva cita
+                calendar.refetchEvents();
+                // Limpiar el formulario después de guardar la cita
+                document.getElementById('agregarCitaForm').reset();
+                // Ocultar el formulario
+                document.getElementById('formulario').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+    </script>
 
     <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -271,7 +272,7 @@ document.getElementById('agregarCitaForm').addEventListener('submit', function(e
                 citasDiv.innerHTML = '';
                 data.forEach(cita => {
                     citasDiv.innerHTML +=
-    `<li class="list-group-item">
+                        `<li class="list-group-item">
         <div class="row">
             <div class="col"><strong>Fecha:</strong> ${cita.start}</div>
             <div class="col"><strong>Motivo:</strong> ${cita.title}</div>
@@ -289,7 +290,7 @@ document.getElementById('agregarCitaForm').addEventListener('submit', function(e
         // Ocultar el contenedor de citas
         document.getElementById('citasContainer').style.display = 'none';
     });
-</script>
+    </script>
 
 
 
@@ -399,11 +400,11 @@ document.getElementById('agregarCitaForm').addEventListener('submit', function(e
     </div>
     </div>
 
-    
+
     <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>
 
     <script>
-        //función para devolverse a la pantalla anterior
+    //función para devolverse a la pantalla anterior
     function atras() {
         window.history.back();
     }

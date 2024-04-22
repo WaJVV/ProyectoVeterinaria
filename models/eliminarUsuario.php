@@ -9,6 +9,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
@@ -47,17 +48,18 @@
     </header>
 
     <div class="FormBuscar d-flex justify-content-start align-items-left">
-        <aside class="bg-light p-1">
-            <h2 class="mb-4">Buscar Usuario</h2>
-            <form action="..\models\eliminarUsuario.php" method="post">
-                <div class="mb-0">
-                    <label for="usuario" class="form-label">Nombre de Usuario:</label>
-                    <input type="text" class="form-control" id="usuario" name="usuario" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </form>
-        </aside>
-    </div>
+    <aside class="bg-light p-1">
+        <h2 class="mb-4">Buscar Usuario</h2>
+        <form action="..\models\eliminarUsuario.php" method="post">
+            <div>
+                <label for="usuario" class="form-label">Buscar por nombre de usuario:</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+        </form>
+    </aside>
+</div>
+
 
     <main>
         <section class="Buscar">

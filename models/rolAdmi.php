@@ -33,11 +33,13 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/toastr/toastr.css">
+    <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
 </head>
 
 <body>
-       
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <a class="navbar-brand text-white" href="#">Dr. Pets</a>
@@ -73,9 +75,9 @@ try {
     </header>
 
     <div class="container text-center">
-        <h2 class="mb-4">Lista de Usuarios</h2>
         <table class="table table-striped">
             <thead>
+            <h2 class="mb-4">Lista de Usuarios</h2>
                 <tr>
                     <th>Usuario</th>
                     <th>Nombre</th>
@@ -95,6 +97,7 @@ try {
                 }
                 ?>
             </tbody>
+            <h2 class="mb-4">Lista de Usuarios</h2>
         </table>
     </div>
 

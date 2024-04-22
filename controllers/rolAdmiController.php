@@ -4,7 +4,7 @@ session_start(); // Iniciar una sesión o reanudar la existente
 // Comprobar si se ha pulsado el botón de cerrar sesión
 if(isset($_POST['cerrarSesion'])) {
     session_destroy(); // Destruir todas las variables de sesión
-    header("Location: ../models/login.php"); // Redireccionar al login.php
+    header("Location: ../views/login.php"); // Redireccionar al login.php
     exit; // Salir del script para evitar cualquier salida adicional
 }
 ?>

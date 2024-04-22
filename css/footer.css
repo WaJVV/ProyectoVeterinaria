@@ -1,0 +1,21 @@
+/* Estilos para el footer */
+footer {
+    background-color: #343a40; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno */
+    position: fixed; /* Fijar el footer en la parte inferior */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos para los iconos */
+footer img {
+    margin-right: 10px; /* Espacio entre los iconos */
+}
+
+/* Estilo para el botón "Entrar" al pasar el mouse sobre él */
+.btn-secondary.back-button {
+    background-color: #02879f; /* Nuevo color de fondo al pasar el mouse */
+    border-color: #02879f; /* Nuevo color del borde al pasar el mouse */
+    color: #fff; /* Nuevo color del texto al pasar el mouse */
+}

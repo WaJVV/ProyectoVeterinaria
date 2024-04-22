@@ -5,7 +5,7 @@ require_once "../views/plugins/fpdf186/fpdf.php";
 class PDF extends FPDF{
     function Header(){
         $this->SetFont('Arial','B',16);
-        $this->Cell(0,10,'Reporte de Citas',0,1,'C');
+        $this->Cell(0,10,utf8_decode('Reporte de Productos con Stock Menor a 5'),0,1,'C');
         $this->Ln(10);
     }
 
@@ -103,6 +103,9 @@ class PDF extends FPDF{
     }
 }
 
+// Limpiar cualquier salida de datos previa
+ob_clean();
+
 // Conexión a la base de datos
 $dsn = 'mysql:host=localhost;dbname=drpetsvet';
 $user = 'root';
@@ -115,49 +118,31 @@ try {
     exit;
 }
 
-// Calcular fecha inicial y final del rango de fechas
-$fecha_inicio = $_POST['fecha_inicio'];
-$fecha_final = $_POST['fecha_final'];
-
-/// Consulta a la base de datos con el rango de fechas y unión con la tabla clientes y veterinario
-$stmt = $dbh->prepare('SELECT c.*, cl.nombre AS nombre_cliente, cl.apellidoPaterno, cl.apellidoMaterno, CONCAT(v.nombreVeterinario, " ", v.apellidoPaterno) AS nombre_veterinario FROM citas c JOIN clientes cl ON c.idCliente = cl.idCliente JOIN veterinario v ON c.idVeterinario = v.idVeterinario WHERE c.fecha_visita BETWEEN :fecha_inicio AND :fecha_final');
-$stmt->bindParam(':fecha_inicio', $fecha_inicio);
-$stmt->bindParam(':fecha_final', $fecha_final);
+// Consulta a la base de datos para obtener los productos con stock menor a 5
+$stmt = $dbh->prepare('SELECT idProducto, nombre AS producto, descripcion, stockProducto 
+                       FROM productoinventario 
+                       WHERE stockProducto < 5');
 $stmt->execute();
-$citas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Consulta adicional para obtener el nombre de la mascota
-$stmtMascotas = $dbh->prepare('SELECT idMascota, nombre FROM mascotas');
-$stmtMascotas->execute();
-$mascotas = $stmtMascotas->fetchAll(PDO::FETCH_ASSOC);
-
-// Crear un array asociativo para mapear los IDs de las mascotas a sus nombres
-$mascotasMap = array();
-foreach ($mascotas as $mascota) {
-    $mascotasMap[$mascota['idMascota']] = $mascota['nombre'];
-}
-
+// Creación del objeto PDF y generación del reporte
+$pdf = new PDF('L', 'mm', 'Letter');
+$pdf->AliasNbPages();
+$pdf->AddPage();
 
 // Encabezados de la tabla
-$header = array('ID', 'Mascota', 'Fecha Visita', 'Motivo', 'Nombre Cliente', 'Veterinario');
+$header = array('ID Producto', 'Producto', 'Descripción', 'Stock');
 
 // Contenido de la tabla
 $data = array();
-foreach($citas as $cita){
-    $nombreCliente = $cita['nombre_cliente'] . ' ' . $cita['apellidoPaterno'] . ' ' . $cita['apellidoMaterno'];
-    $nombreMascota = isset($mascotasMap[$cita['idMascota']]) ? $mascotasMap[$cita['idMascota']] : '';
-    $data[] = array($cita['idCitas'], $nombreMascota, $cita['fecha_visita'], $cita['motivo'], $nombreCliente, $cita['nombre_veterinario']);
+foreach($productos as $producto){
+    $data[] = array($producto['idProducto'], $producto['producto'], $producto['descripcion'], $producto['stockProducto']);
 }
-
-//  tamaño de página personalizado
-$pdf = new PDF('L','mm','Letter'); // 'L' para orientación horizontal
-$pdf->AliasNbPages();
-$pdf->AddPage();
 
 // Generar tabla en el PDF
 $pdf->BodyTable($header, $data);
 
 // Enviar el PDF al navegador para su descarga
-$pdf->Output('D', 'reporte.pdf');
+$pdf->Output('D', 'reporte_stock.pdf');
 exit; // Salir del script después de enviar el PDF
 ?>

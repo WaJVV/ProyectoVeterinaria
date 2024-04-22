@@ -45,8 +45,8 @@
 </header>
 
 <body>
-
-<div class="container mt-5">
+<!-- Cards para ver los reportes -->
+    <div class="container mt-5">
         <article class="Reportesvarios">
             <h1 class="text-center">Reportería</h1>
             <div class="row justify-content-around">
@@ -100,17 +100,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card h-100 rounded">
+                        <img class="card-img-top" src="..\img\inventario.jpg" alt="cumples">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Inventario</h5>
+                            <p class="card-text">Revision del stock.</p>
+                            <a href="..\models\reportestock.php" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
         </article>
     </div>
 
     <button class="btn btn-secondary back-button" onclick="atras()">Atrás</button>
     <script>
-        function atras() {
-            window.history.back();
-        }
+    function atras() {
+        window.history.back();
+    }
     </script>
-    
+
     <footer class="bg-dark">
         <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
             <div class="col-12">
