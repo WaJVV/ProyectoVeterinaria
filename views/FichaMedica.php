@@ -81,7 +81,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="fecha_cita">Fecha Cita Médica</label>
-                                        <input type="text" class="form-control" id="fecha_cita" name="fecha_cita" required>
+                                        <input type="date" class="form-control" id="fecha_cita" name="fecha_cita" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

@@ -115,36 +115,36 @@ class fichaMedica extends Conexion
     }
     
     public function listarTodosDb(){
-    $query = "SELECT * FROM ficha_medica";
-    $arr = array();
-    try {
-        self::getConexion();
-        $resultado = self::$cnx->prepare($query);
-        $resultado->execute();
-        self::desconectar();
-        foreach ($resultado->fetchAll() as $encontrado) {
-            $fichaMedica = new fichaMedica();
-            // Agregar los nuevos atributos de proveedor
-            $fichaMedica->setIdFichaMedica($encontrado['idFichaMedica']);
-            $fichaMedica->setIdMascota($encontrado['idMascota']);
-            $fichaMedica->setFecha_cita($encontrado['fecha_cita']);
-            $fichaMedica->setIdVeterinario($encontrado['idVeterinario']);
-            $fichaMedica->setPeso($encontrado['peso']);
-            $fichaMedica->setTemperatura($encontrado['temperatura']);
-            $fichaMedica->setMotivo($encontrado['motivo']);
-            $fichaMedica->setDiagnostico($encontrado['diagnostico']);
-            $fichaMedica->setTratamiento($encontrado['tratamiento']);
-
-            $arr[] = $fichaMedica;
+        try {
+            $query = "SELECT * FROM ficha_medica";
+            $arr = array();
+            self::getConexion();
+            $resultado = self::$cnx->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $fichaMedica = new FichaMedica();
+                // Agregar los nuevos atributos de proveedor
+                $fichaMedica->setIdFichaMedica($encontrado['idFichaMedica']);
+                $fichaMedica->setIdMascota($encontrado['idMascota']);
+                $fichaMedica->setFecha_cita($encontrado['fecha_cita']);
+                $fichaMedica->setIdVeterinario($encontrado['idVeterinario']);
+                $fichaMedica->setPeso($encontrado['peso']);
+                $fichaMedica->setTemperatura($encontrado['temperatura']);
+                $fichaMedica->setMotivo($encontrado['motivo']);
+                $fichaMedica->setDiagnostico($encontrado['diagnostico']);
+                $fichaMedica->setTratamiento($encontrado['tratamiento']);
+                $arr[] = $fichaMedica;
+            }
+            return $arr;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );
+            // Devolver un array vacío en caso de error
+            return array();
         }
-        return $arr;
-    } catch (PDOException $Exception) {
-        self::desconectar();
-        $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
-        return json_encode($error);
     }
-}
-
+    
 public function verificarExistenciaDb(){
     $query = "SELECT * FROM ficha_medica WHERE idMascota=:idMascota";
     try {
