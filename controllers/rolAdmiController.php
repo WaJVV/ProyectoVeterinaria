@@ -116,6 +116,7 @@ if(isset($_GET['nombre']) && isset($_GET['apellidos'])){
                                             <button class="opcion-desplegable btn btn-link">Pacientes</button>
                                             <ul class="submenu">
                                                 <li><a href="..\views\pacientes.php">Lista</a></li>
+                                                <li><a href="..\views\FichaMedica.php">Ficha medica</a></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item">

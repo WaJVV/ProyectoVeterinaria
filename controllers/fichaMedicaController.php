@@ -3,7 +3,7 @@ require_once '../models/fichaMedica.php';
 
 switch ($_GET["op"]) {
     case 'listar_para_tabla':
-        $fichaMedica = new FichaMedica();
+        $fichaMedica = new fichaMedica();
         $fichaMedicas = $fichaMedica->listarTodosDb();
             $data = array();
             foreach ($fichaMedicas as $reg) {
@@ -41,7 +41,7 @@ switch ($_GET["op"]) {
         $tratamiento = isset($_POST["tratamiento"]) ? trim($_POST["tratamiento"]) : "";
 
         // Crear el objeto Proveedor y establecer los valores
-        $fichaMedica = new Ficha();
+        $fichaMedica = new fichaMedica();
         $fichaMedica->setIdMascota($idMascota);
         $fichaMedica->setFecha_cita($fecha_cita);
         $fichaMedica->setIdVeterinario($idVeterinario);

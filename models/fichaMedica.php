@@ -115,15 +115,15 @@ class fichaMedica extends Conexion
     }
     
     public function listarTodosDb(){
+        $query = "SELECT * FROM ficha_medica";
+        $arr = array();
         try {
-            $query = "SELECT * FROM ficha_medica";
-            $arr = array();
             self::getConexion();
             $resultado = self::$cnx->prepare($query);
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $fichaMedica = new FichaMedica();
+                $fichaMedica = new fichaMedica();
                 // Agregar los nuevos atributos de proveedor
                 $fichaMedica->setIdFichaMedica($encontrado['idFichaMedica']);
                 $fichaMedica->setIdMascota($encontrado['idMascota']);
@@ -167,7 +167,7 @@ public function verificarExistenciaDb(){
 }
 
 public function guardarEnDb(){
-    $query = "INSERT INTO `ficha_medica`(`idMascota`, `fecha_cita`, `idVeterianrio`, `peso`, `temperatura`, `motivo`, `diagnostico`, `tratamiento`) VALUES (:idMascota, :fecha_cita, :idVeterinario, :peso, :temperatura, :motivo, :diagnostico, :tratamiento)";
+    $query = "INSERT INTO `ficha_medica`(`idMascota`, `fecha_cita`, `idVeterinario`, `peso`, `temperatura`, `motivo`, `diagnostico`, `tratamiento`) VALUES (:idMascota, :fecha_cita, :idVeterinario, :peso, :temperatura, :motivo, :diagnostico, :tratamiento)";
     try {
         self::getConexion();
         $idMascota = strtoupper($this->getIdMascota());
@@ -181,14 +181,13 @@ public function guardarEnDb(){
 
         $resultado = self::$cnx->prepare($query);
         $resultado->bindParam(":idMascota", $idMascota, PDO::PARAM_INT);
-        $resultado->bindParam(":fecha_cita", $fecha_cita, PDO::PARAM_STR);
-        $resultado->bindParam(":idVeterinario", $idVeterinario, PDO::PARAM_DATE);
+        $resultado->bindParam(":fecha_cita", $fecha_cita, PDO::PARAM_DATE);
+        $resultado->bindParam(":idVeterinario", $idVeterinario, PDO::PARAM_INT);
         $resultado->bindParam(":peso", $peso, PDO::PARAM_DECIMAL);
         $resultado->bindParam(":temperatura", $temperatura, PDO::PARAM_DECIMAL);
         $resultado->bindParam(":motivo", $motivo, PDO::PARAM_STR);
         $resultado->bindParam(":diagnostico", $diagnostico, PDO::PARAM_STR);
         $resultado->bindParam(":tratamiento", $tratamiento, PDO::PARAM_STR);
-
         $resultado->execute();
         self::desconectar();
     } catch (PDOException $Exception) {
@@ -203,8 +202,7 @@ public function llenarCampos($idMascota){
 FROM ficha_medica fm
 WHERE fm.idMascota = :idMascota";
 
-    try
-{
+    try{
         self::getConexion();
         $resultado = self::$cnx->prepare($query);
         $resultado->bindParam(":idMascota", $idMascota, PDO::PARAM_INT);
